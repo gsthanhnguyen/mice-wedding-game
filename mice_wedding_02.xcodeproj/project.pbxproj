@@ -17,6 +17,8 @@
 		0E19B70D29E0802900F92298 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B70B29E0802900F92298 /* LaunchScreen.storyboard */; };
 		0E19B71629E0809700F92298 /* onGrassScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B71529E0809700F92298 /* onGrassScene.sks */; };
 		0E19B71829E0813A00F92298 /* onGrassScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E19B71729E0813A00F92298 /* onGrassScene.swift */; };
+		0E19B71B29E3707900F92298 /* mouse_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B71A29E3707900F92298 /* mouse_1.png */; };
+		0E19B71D29E371C700F92298 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B71C29E371C700F92298 /* cat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		0E19B70C29E0802900F92298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E19B71529E0809700F92298 /* onGrassScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = onGrassScene.sks; sourceTree = "<group>"; };
 		0E19B71729E0813A00F92298 /* onGrassScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onGrassScene.swift; sourceTree = "<group>"; };
+		0E19B71A29E3707900F92298 /* mouse_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse_1.png; sourceTree = "<group>"; };
+		0E19B71C29E371C700F92298 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,8 @@
 		0E19B6FB29E0802700F92298 /* mice_wedding_02 */ = {
 			isa = PBXGroup;
 			children = (
+				0E19B71929E3701600F92298 /* MediaAssets */,
 				0E19B71429E0807400F92298 /* Scenes */,
-				0E19B71329E0805800F92298 /* MediaAssets */,
 				0E19B6FC29E0802700F92298 /* AppDelegate.swift */,
 				0E19B6FE29E0802700F92298 /* GameScene.sks */,
 				0E19B70029E0802700F92298 /* Actions.sks */,
@@ -78,19 +82,21 @@
 			path = mice_wedding_02;
 			sourceTree = "<group>";
 		};
-		0E19B71329E0805800F92298 /* MediaAssets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MediaAssets;
-			sourceTree = "<group>";
-		};
 		0E19B71429E0807400F92298 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				0E19B71529E0809700F92298 /* onGrassScene.sks */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0E19B71929E3701600F92298 /* MediaAssets */ = {
+			isa = PBXGroup;
+			children = (
+				0E19B71C29E371C700F92298 /* cat.png */,
+				0E19B71A29E3707900F92298 /* mouse_1.png */,
+			);
+			path = MediaAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,10 +159,12 @@
 			files = (
 				0E19B70829E0802700F92298 /* Main.storyboard in Resources */,
 				0E19B6FF29E0802700F92298 /* GameScene.sks in Resources */,
+				0E19B71D29E371C700F92298 /* cat.png in Resources */,
 				0E19B71629E0809700F92298 /* onGrassScene.sks in Resources */,
 				0E19B70A29E0802900F92298 /* Assets.xcassets in Resources */,
 				0E19B70D29E0802900F92298 /* LaunchScreen.storyboard in Resources */,
 				0E19B70129E0802700F92298 /* Actions.sks in Resources */,
+				0E19B71B29E3707900F92298 /* mouse_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
