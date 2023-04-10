@@ -46,19 +46,6 @@ public class onGrassScene: SKScene, SKPhysicsContactDelegate {
                 cats.append(child as! SKSpriteNode)
             } 
         }
-
-        // make mouses move together with the first mouse
-        for i: Int in 0..<mice!.count {
-            let mouse: SKSpriteNode = mice![i]
-            if i == 0 {
-                leadingMouse = mouse
-            }
-            let offset: CGFloat = CGFloat(i+1) * 5 // offset the position of the mouse
-            if let leadingMousePosition = leadingMouse?.position {
-                mouse.position = CGPoint(x: leadingMousePosition.x + offset, y: leadingMousePosition.y)
-            }
-        }
-
     }
 
     // handle touche events and get the location of the touch
@@ -83,54 +70,71 @@ public class onGrassScene: SKScene, SKPhysicsContactDelegate {
     }
 
     fileprivate func updateMice() {
-        guard let touch: CGPoint = lastTouchLocation else {
+        guard let lastTouchLocation: CGPoint = lastTouchLocation, let mice = mice, let leadingMouse = mice.first
+        else {
             return
         }
-        let currentPosition: CGPoint = leadingMouse!.position
-        let xDistance = abs(touch.x - currentPosition.x)
-        let yDistance = abs(touch.y - currentPosition.y)
-        if xDistance > leadingMouse!.frame.width/2 || yDistance > leadingMouse!.frame.height/2 {
-            updateMovementNotRotation(for: leadingMouse!, to: touch, speed: miceSpeed)
+        let currentPosition: CGPoint = leadingMouse.position
+        let xDistance = abs(currentPosition.x - lastTouchLocation.x)
+        let yDistance = abs(currentPosition.y - lastTouchLocation.y)
+        if xDistance > leadingMouse.frame.width/2 || yDistance > leadingMouse.frame.height/2 {
+            mouseMovementUpdating(for: leadingMouse, to: lastTouchLocation, speed: miceSpeed)
         } else {
-            leadingMouse!.physicsBody?.isResting = true
+            leadingMouse.physicsBody?.isResting = true
         }
     }
 
-    fileprivate func updateMovement(for currentNode: SKSpriteNode, to targetTouch: CGPoint, speed: CGFloat) {
-        let currentPosition: CGPoint = currentNode.position
-        let angle: CGFloat = CGFloat.pi + atan2(currentPosition.y - targetTouch.y, currentPosition.x - targetTouch.x)
-        let rotation: SKAction = SKAction.rotate(toAngle: angle + (CGFloat.pi * 0.7), duration: 3, shortestUnitArc: true)
-        currentNode.run(rotation) // TODO: check again await, not sure
-        
-        let xVelocity: CGFloat = cos(angle) * speed * 0.2
-        let yVelocity: CGFloat = sin(angle) * speed * 0.2
-        let velocity: CGVector = CGVector(dx: xVelocity, dy: yVelocity)
-        currentNode.physicsBody?.velocity = velocity
-    }
-    
-    fileprivate func updateMovementNotRotation(for currentNode: SKSpriteNode, to targetTouch: CGPoint, speed: CGFloat) {
-        let currentPosition: CGPoint = currentNode.position
+    fileprivate func mouseMovementUpdating(for currentMouse: SKSpriteNode, to targetTouch: CGPoint, speed: CGFloat) {
+        let currentPosition: CGPoint = currentMouse.position
         let angle: CGFloat = atan2(currentPosition.y - targetTouch.y, currentPosition.x - targetTouch.x)
-            
+        let action: SKAction = SKAction.move(to: targetTouch, duration: 0.5)
+        currentMouse.run(action)
+        
         let xVelocity: CGFloat = cos(angle) * speed
         let yVelocity: CGFloat = sin(angle) * speed
         let velocity: CGVector = CGVector(dx: xVelocity, dy: yVelocity)
-        currentNode.physicsBody?.velocity = velocity
+        currentMouse.physicsBody?.velocity = velocity
+        
+        
+        let distanceBetweenMice: CGFloat = 30
+        if let miceCount = mice?.count, miceCount > 1 {
+            for i in (1..<miceCount).reversed() {
+                let mouse: SKSpriteNode = mice![i]
+                let previousMouse: SKSpriteNode = mice![i - 1]
+                let newPosition: CGPoint = CGPoint(x: previousMouse.position.x - distanceBetweenMice, y: previousMouse.position.y)
+                let moveAction: SKAction = SKAction.move(to: newPosition, duration: 0.5)
+                mouse.run(moveAction)
+                mouse.zPosition = previousMouse.zPosition + 1 // Ensure nodes are layered properly
+            }
+        }
     }
 
 
     fileprivate func updateCatsChasing() {
-        guard let _: SKSpriteNode = leadingMouse else {
+        guard let leadingMouse = leadingMouse else {
             return
         }
-        let targetPosition: CGPoint = leadingMouse!.position
+        let targetPosition: CGPoint = leadingMouse.position
         for cat: SKSpriteNode in cats { // this part to make all cats move to the mouse
             updateMovement(for: cat, to: targetPosition, speed: catSpeed)
         }
     }
 
+    fileprivate func updateMovement(for currentNode: SKSpriteNode, to targetTouch: CGPoint, speed: CGFloat) {
+         let currentPosition: CGPoint = currentNode.position
+         let angle: CGFloat = CGFloat.pi + atan2(currentPosition.y - targetTouch.y, currentPosition.x - targetTouch.x)
+         let rotation: SKAction = SKAction.rotate(toAngle: angle + (CGFloat.pi * 0.7), duration: 3, shortestUnitArc: true)
+         currentNode.run(rotation)
+        
+         let xVelocity: CGFloat = cos(angle) * speed * 0.3
+         let yVelocity: CGFloat = sin(angle) * speed * 0.3
+         let velocity: CGVector = CGVector(dx: xVelocity, dy: yVelocity)
+         currentNode.physicsBody?.velocity = velocity
+    }
+    
+
     // handle collision events
-    public func handleCollision(_ contact: SKPhysicsContact)
+    public func collisionHandling(_ contact: SKPhysicsContact)
     {
         var bodyA: SKPhysicsBody
         var bodyB: SKPhysicsBody
