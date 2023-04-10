@@ -87,10 +87,10 @@
 		0E19B71929E3701600F92298 /* MediaAssets */ = {
 			isa = PBXGroup;
 			children = (
-				0E19B72229E42CDB00F92298 /* mouse_4.png */,
-				0E19B72629E42CFE00F92298 /* mouse_3.png */,
-				0E19B72429E42CF200F92298 /* mouse_2.png */,
 				0E19B71A29E3707900F92298 /* mouse_1.png */,
+				0E19B72429E42CF200F92298 /* mouse_2.png */,
+				0E19B72629E42CFE00F92298 /* mouse_3.png */,
+				0E19B72229E42CDB00F92298 /* mouse_4.png */,
 				0E19B71C29E371C700F92298 /* cat.png */,
 				0EADE48F29E44E4D004B142D /* exitHole.png */,
 			);
