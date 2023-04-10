@@ -6,10 +6,9 @@
 //
 
 import SpriteKit
-import UIKit
-import CoreGraphics
 
-public class underGroundScene: SKScene, SKPhysicsContactDelegate {
+public class onGrassScene: SKScene, SKPhysicsContactDelegate {
+    // start scene
     // set speed for Mice and Cat
     let miceSpeed: CGFloat = 100
     let catSpeed: CGFloat = 120
@@ -17,7 +16,7 @@ public class underGroundScene: SKScene, SKPhysicsContactDelegate {
     // declare objects
     var mice: [SKSpriteNode]? = [] // using array list to manage multiple mouse
     var leadingMouse: SKSpriteNode?
-    var cats: [SKSpriteNode]? = [] // using array list to manage multiple cats
+    var cats: [SKSpriteNode] = [] // using array list to manage multiple cats
     var exitHole: SKSpriteNode?
 
     var lastTouchLocation: CGPoint? = nil
@@ -36,27 +35,28 @@ public class underGroundScene: SKScene, SKPhysicsContactDelegate {
         // animation moving left and right
         let moveLeftRight: SKAction = SKAction.sequence([SKAction.moveBy(x: 20, y: 0, duration: 0.5), SKAction.moveBy(x: -20, y: 0, duration: 0.5)])
         let moveLeftRightContinuously: SKAction = SKAction.repeatForever(moveLeftRight)
-
+        print("pass moving animation definition")
         // set up the animation for nodes and add them to the array list
         for child: SKNode in self.children {
-            if child.name == "mouse" { // declare the name of the node in the scene
+            if child.name?.hasPrefix("mouse_") != nil { // declare the name of the node in the scene
                 child.run(moveUpDownContinuously)
                 mice?.append(child as! SKSpriteNode)
             } else if child.name == "cat" { // declare the name of the node in the scene
                 child.run(moveLeftRightContinuously)
-                cats?.append(child as! SKSpriteNode)
+                cats.append(child as! SKSpriteNode)
             } 
         }
 
         // make mouses move together with the first mouse
-        let firstMouse: SKSpriteNode = mice![0]
-        for i: Int in 1..<mice!.count {
+        for i: Int in 0..<mice!.count {
             let mouse: SKSpriteNode = mice![i]
-            if i == 1 {
+            if i == 0 {
                 leadingMouse = mouse
             }
-            let offset: CGFloat = CGFloat(i) * 10 // offset the position of the mouse
-            mouse.position = CGPoint(x: firstMouse.position.x + offset, y: firstMouse.position.y)
+            let offset: CGFloat = CGFloat(i+1) * 5 // offset the position of the mouse
+            if let leadingMousePosition = leadingMouse?.position {
+                mouse.position = CGPoint(x: leadingMousePosition.x + offset, y: leadingMousePosition.y)
+            }
         }
 
     }
@@ -82,7 +82,6 @@ public class underGroundScene: SKScene, SKPhysicsContactDelegate {
         updateCatsChasing()
     }
 
-    // TODO: check again this function because nodes have to move together
     fileprivate func updateMice() {
         guard let touch: CGPoint = lastTouchLocation else {
             return
@@ -93,7 +92,7 @@ public class underGroundScene: SKScene, SKPhysicsContactDelegate {
         if xDistance > leadingMouse!.frame.width/2 || yDistance > leadingMouse!.frame.height/2 {
             updateMovement(for: leadingMouse!, to: touch, speed: miceSpeed)
         } else {
-            leadingMouse!.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            leadingMouse!.physicsBody?.isResting = true
         }
     }
 
@@ -114,7 +113,7 @@ public class underGroundScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         let targetPosition: CGPoint = leadingMouse!.position
-        for cat: SKSpriteNode in cats! { // this part to make all cats move to the mouse
+        for cat: SKSpriteNode in cats { // this part to make all cats move to the mouse
             updateMovement(for: cat, to: targetPosition, speed: catSpeed)
         }
     }
@@ -125,11 +124,11 @@ public class underGroundScene: SKScene, SKPhysicsContactDelegate {
         var bodyA: SKPhysicsBody
         var bodyB: SKPhysicsBody
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-            let bodyA: SKPhysicsBody = contact.bodyA
-            let bodyB: SKPhysicsBody = contact.bodyB
+            bodyA = contact.bodyA
+            bodyB = contact.bodyB
         } else {
-            let bodyA: SKPhysicsBody = contact.bodyB
-            let bodyB: SKPhysicsBody = contact.bodyA
+            bodyA = contact.bodyB
+            bodyB = contact.bodyA
         }
         
         // to check is contact or not
@@ -142,8 +141,9 @@ public class underGroundScene: SKScene, SKPhysicsContactDelegate {
 
     // handle the end of the game
     fileprivate func upLevel(_ win: Bool) {
-        if win {
-            view?.presentScene()
-        }
+        let transition = SKTransition.flipHorizontal(withDuration: 1.0)
+        let blankScene = SKScene(size: view!.bounds.size)
+
+        view?.presentScene(blankScene, transition: transition)
     }
 }
