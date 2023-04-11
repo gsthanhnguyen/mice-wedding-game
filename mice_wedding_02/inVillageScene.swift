@@ -1,3 +1,5 @@
+//
+//  grass.swift
 //  mice-wedding
 //
 //  Created by Thanh Nguyen on 2023-04-06.
@@ -5,12 +7,11 @@
 
 import SpriteKit
 
-public class onGrassScene: SKScene, SKPhysicsContactDelegate {
+public class inVillageScene: SKScene, SKPhysicsContactDelegate {
     // start scene
     // set speed for Mice and Cat
     let miceSpeed: CGFloat = 100
     let catSpeed: CGFloat = 120
-    let leafDuration: CGFloat = 6.0
 
     // declare objects
     var mice: [SKSpriteNode]? = [] // using array list to manage multiple mouse
@@ -18,18 +19,13 @@ public class onGrassScene: SKScene, SKPhysicsContactDelegate {
     var cats: [SKSpriteNode] = [] // using array list to manage multiple cats
     var exitHole: SKSpriteNode?
 
-    var leaf: SKSpriteNode?
-    var isCovered: Bool = false
-    var leafCoveredCount: Int = 0
-
     var lastTouchLocation: CGPoint? = nil
 
     // set up the physics category
-    struct PhysicsCategory { // declare all kind of node in the scene in this struct
+    struct PhysicsCategory {
     static let cat: UInt32 = 0x1 << 0 // 1
     static let mouse: UInt32 = 0x1 << 1 // 2
     static let exitHole: UInt32 = 0x1 << 2 // 4
-    static let leaf: UInt32 = 0x1 << 3 // 8
     }
 
     // set animation for Nodes
@@ -79,22 +75,13 @@ public class onGrassScene: SKScene, SKPhysicsContactDelegate {
 
                 cats.append(catNode)
             } else if child.name == "exitHole" {
-                child.run(repeatFlash) // set the animation of the node
+                child.run(repeatFlash)
                 let exitHoleNode: SKSpriteNode = child as! SKSpriteNode
                 exitHoleNode.physicsBody = SKPhysicsBody(rectangleOf: exitHoleNode.size)
                 exitHoleNode.physicsBody?.categoryBitMask = PhysicsCategory.exitHole // set the category of the node
                 exitHoleNode.physicsBody?.collisionBitMask = PhysicsCategory.mouse // set the collision of the node
                 exitHoleNode.physicsBody?.contactTestBitMask = PhysicsCategory.mouse // set the contact of the node
                 exitHoleNode.physicsBody?.affectedByGravity = false // set the gravity of the node
-            } else if child.name == "leaf" {
-                child.run(repeatFlash) // set the animation of the node
-                child.run(repeatFlash) // set the animation of the node
-                let leafNode: SKSpriteNode = child as! SKSpriteNode
-                leafNode.physicsBody = SKPhysicsBody(rectangleOf: leafNode.size)
-                leafNode.physicsBody?.categoryBitMask = PhysicsCategory.leaf // set the category of the node
-                leafNode.physicsBody?.collisionBitMask = PhysicsCategory.mouse // set the collision of the node
-                leafNode.physicsBody?.contactTestBitMask = PhysicsCategory.mouse // set the contact of the node
-                leafNode.physicsBody?.affectedByGravity = false // set the gravity of the node
             }
             
         }
@@ -203,44 +190,9 @@ public class onGrassScene: SKScene, SKPhysicsContactDelegate {
         }
 
         if firstBody.categoryBitMask == PhysicsCategory.cat && secondBody.categoryBitMask == PhysicsCategory.mouse {
-            if !isCovered {
-                upLevel(false)
-            }
+            upLevel(true)
         } else if firstBody.categoryBitMask == PhysicsCategory.mouse && secondBody.categoryBitMask == PhysicsCategory.exitHole {
             upLevel(true)
-        } else if firstBody.categoryBitMask == PhysicsCategory.mouse && secondBody.categoryBitMask == PhysicsCategory.leaf {
-            if let leafNode = secondBody.node as? SKSpriteNode {
-                leafNode.removeFromParent()
-            }
-            self.isLeafCovered()
-        }
-    }
-
-    fileprivate func isLeafCovered() {
-        isCovered = true
-        leafCoveredCount += 1
-        
-        let duration: CGFloat = 0.35
-        let count: Int = 20
-
-        for mouse in mice! {
-            mouse.run(SKAction.repeat(
-            SKAction.sequence([
-                SKAction.setTexture(SKTexture(imageNamed: "leaf")),
-                SKAction.moveBy(x: 0, y: 0, duration: duration),
-                SKAction.setTexture(SKTexture(imageNamed: "mouse")),
-                SKAction.moveBy(x: 0, y: 0, duration: duration),
-                ]
-            ), count: count
-            ))
-            mouse.run(SKAction.setTexture(SKTexture(imageNamed: "mouse"))) // reset texture after animation
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + self.leafDuration + duration * CGFloat(count)) {
-            if self.leafCoveredCount <= 1 {
-                self.isCovered = false
-            }
-            self.leafCoveredCount -= 1
         }
     }
 

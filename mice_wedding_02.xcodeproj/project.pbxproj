@@ -12,14 +12,18 @@
 		0E19B70529E0802700F92298 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E19B70429E0802700F92298 /* GameViewController.swift */; };
 		0E19B70829E0802700F92298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B70629E0802700F92298 /* Main.storyboard */; };
 		0E19B70D29E0802900F92298 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B70B29E0802900F92298 /* LaunchScreen.storyboard */; };
-		0E19B71629E0809700F92298 /* onGrassScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B71529E0809700F92298 /* onGrassScene.sks */; };
-		0E19B71829E0813A00F92298 /* onGrassScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E19B71729E0813A00F92298 /* onGrassScene.swift */; };
+		0E19B71629E0809700F92298 /* inVillageScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B71529E0809700F92298 /* inVillageScene.sks */; };
+		0E19B71829E0813A00F92298 /* inVillageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E19B71729E0813A00F92298 /* inVillageScene.swift */; };
 		0E19B71B29E3707900F92298 /* mouse_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B71A29E3707900F92298 /* mouse_1.png */; };
 		0E19B71D29E371C700F92298 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B71C29E371C700F92298 /* cat.png */; };
 		0E19B71F29E4050700F92298 /* wall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B71E29E4050700F92298 /* wall.sks */; };
 		0E19B72329E42CDB00F92298 /* mouse_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B72229E42CDB00F92298 /* mouse_4.png */; };
 		0E19B72529E42CF200F92298 /* mouse_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B72429E42CF200F92298 /* mouse_2.png */; };
 		0E19B72729E42CFE00F92298 /* mouse_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E19B72629E42CFE00F92298 /* mouse_3.png */; };
+		0E770D9329E5A92A00C11C22 /* onGrassScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E770D9229E5A92A00C11C22 /* onGrassScene.swift */; };
+		0E770D9529E5A93F00C11C22 /* onGrassScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9429E5A93F00C11C22 /* onGrassScene.sks */; };
+		0E770D9729E5BB4100C11C22 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9629E5BB4100C11C22 /* leaf.png */; };
+		0E770D9929E5C13C00C11C22 /* mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9829E5C13C00C11C22 /* mouse.png */; };
 		0EADE49029E44E4D004B142D /* exitHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EADE48F29E44E4D004B142D /* exitHole.png */; };
 /* End PBXBuildFile section */
 
@@ -30,14 +34,18 @@
 		0E19B70429E0802700F92298 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		0E19B70729E0802700F92298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E19B70C29E0802900F92298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0E19B71529E0809700F92298 /* onGrassScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = onGrassScene.sks; sourceTree = "<group>"; };
-		0E19B71729E0813A00F92298 /* onGrassScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onGrassScene.swift; sourceTree = "<group>"; };
+		0E19B71529E0809700F92298 /* inVillageScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = inVillageScene.sks; sourceTree = "<group>"; };
+		0E19B71729E0813A00F92298 /* inVillageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inVillageScene.swift; sourceTree = "<group>"; };
 		0E19B71A29E3707900F92298 /* mouse_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse_1.png; sourceTree = "<group>"; };
 		0E19B71C29E371C700F92298 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
 		0E19B71E29E4050700F92298 /* wall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = wall.sks; sourceTree = "<group>"; };
 		0E19B72229E42CDB00F92298 /* mouse_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mouse_4.png; path = "../../../../../../../Desktop/mice-wedding-assets/mouse_4.png"; sourceTree = "<group>"; };
 		0E19B72429E42CF200F92298 /* mouse_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse_2.png; sourceTree = "<group>"; };
 		0E19B72629E42CFE00F92298 /* mouse_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse_3.png; sourceTree = "<group>"; };
+		0E770D9229E5A92A00C11C22 /* onGrassScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onGrassScene.swift; sourceTree = "<group>"; };
+		0E770D9429E5A93F00C11C22 /* onGrassScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = onGrassScene.sks; sourceTree = "<group>"; };
+		0E770D9629E5BB4100C11C22 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf.png; sourceTree = "<group>"; };
+		0E770D9829E5C13C00C11C22 /* mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse.png; sourceTree = "<group>"; };
 		0EADE48F29E44E4D004B142D /* exitHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitHole.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,8 +85,10 @@
 				0E19B70429E0802700F92298 /* GameViewController.swift */,
 				0E19B70629E0802700F92298 /* Main.storyboard */,
 				0E19B70B29E0802900F92298 /* LaunchScreen.storyboard */,
-				0E19B71729E0813A00F92298 /* onGrassScene.swift */,
-				0E19B71529E0809700F92298 /* onGrassScene.sks */,
+				0E19B71729E0813A00F92298 /* inVillageScene.swift */,
+				0E19B71529E0809700F92298 /* inVillageScene.sks */,
+				0E770D9229E5A92A00C11C22 /* onGrassScene.swift */,
+				0E770D9429E5A93F00C11C22 /* onGrassScene.sks */,
 			);
 			path = mice_wedding_02;
 			sourceTree = "<group>";
@@ -86,12 +96,14 @@
 		0E19B71929E3701600F92298 /* MediaAssets */ = {
 			isa = PBXGroup;
 			children = (
+				0E770D9829E5C13C00C11C22 /* mouse.png */,
 				0E19B71A29E3707900F92298 /* mouse_1.png */,
 				0E19B72429E42CF200F92298 /* mouse_2.png */,
 				0E19B72629E42CFE00F92298 /* mouse_3.png */,
 				0E19B72229E42CDB00F92298 /* mouse_4.png */,
 				0E19B71C29E371C700F92298 /* cat.png */,
 				0EADE48F29E44E4D004B142D /* exitHole.png */,
+				0E770D9629E5BB4100C11C22 /* leaf.png */,
 				0E19B71E29E4050700F92298 /* wall.sks */,
 			);
 			path = MediaAssets;
@@ -157,14 +169,17 @@
 			files = (
 				0E19B70829E0802700F92298 /* Main.storyboard in Resources */,
 				0E19B72729E42CFE00F92298 /* mouse_3.png in Resources */,
+				0E770D9529E5A93F00C11C22 /* onGrassScene.sks in Resources */,
 				0E19B72329E42CDB00F92298 /* mouse_4.png in Resources */,
 				0E19B71F29E4050700F92298 /* wall.sks in Resources */,
 				0E19B72529E42CF200F92298 /* mouse_2.png in Resources */,
 				0EADE49029E44E4D004B142D /* exitHole.png in Resources */,
 				0E19B71D29E371C700F92298 /* cat.png in Resources */,
-				0E19B71629E0809700F92298 /* onGrassScene.sks in Resources */,
+				0E770D9929E5C13C00C11C22 /* mouse.png in Resources */,
+				0E19B71629E0809700F92298 /* inVillageScene.sks in Resources */,
 				0E19B70D29E0802900F92298 /* LaunchScreen.storyboard in Resources */,
 				0E19B70129E0802700F92298 /* Actions.sks in Resources */,
+				0E770D9729E5BB4100C11C22 /* leaf.png in Resources */,
 				0E19B71B29E3707900F92298 /* mouse_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +191,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E19B71829E0813A00F92298 /* onGrassScene.swift in Sources */,
+				0E770D9329E5A92A00C11C22 /* onGrassScene.swift in Sources */,
+				0E19B71829E0813A00F92298 /* inVillageScene.swift in Sources */,
 				0E19B70529E0802700F92298 /* GameViewController.swift in Sources */,
 				0E19B6FD29E0802700F92298 /* AppDelegate.swift in Sources */,
 			);
