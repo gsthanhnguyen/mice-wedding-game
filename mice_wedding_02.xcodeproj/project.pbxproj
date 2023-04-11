@@ -79,7 +79,6 @@
 				0E19B70B29E0802900F92298 /* LaunchScreen.storyboard */,
 				0E19B71729E0813A00F92298 /* onGrassScene.swift */,
 				0E19B71529E0809700F92298 /* onGrassScene.sks */,
-				0E19B71E29E4050700F92298 /* wall.sks */,
 			);
 			path = mice_wedding_02;
 			sourceTree = "<group>";
@@ -93,6 +92,7 @@
 				0E19B72229E42CDB00F92298 /* mouse_4.png */,
 				0E19B71C29E371C700F92298 /* cat.png */,
 				0EADE48F29E44E4D004B142D /* exitHole.png */,
+				0E19B71E29E4050700F92298 /* wall.sks */,
 			);
 			path = MediaAssets;
 			sourceTree = "<group>";
