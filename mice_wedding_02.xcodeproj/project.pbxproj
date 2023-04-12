@@ -24,8 +24,8 @@
 		0E1E94CF29E6B7EC003BE696 /* N01_Intro.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94CE29E6B7EC003BE696 /* N01_Intro.sks */; };
 		0E1E94D129E6B83E003BE696 /* N02_OriginalStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94D029E6B83E003BE696 /* N02_OriginalStory.swift */; };
 		0E1E94D329E6B852003BE696 /* N02_OriginalStory.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94D229E6B852003BE696 /* N02_OriginalStory.sks */; };
-		0E1E94D529E6B866003BE696 /* 03_HowToPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94D429E6B866003BE696 /* 03_HowToPlay.swift */; };
-		0E1E94D729E6B87D003BE696 /* 03_HowToPlay.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94D629E6B87D003BE696 /* 03_HowToPlay.sks */; };
+		0E1E94D529E6B866003BE696 /* N03_HowToPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94D429E6B866003BE696 /* N03_HowToPlay.swift */; };
+		0E1E94D729E6B87D003BE696 /* N03_HowToPlay.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94D629E6B87D003BE696 /* N03_HowToPlay.sks */; };
 		0E1E94D929E6B8AC003BE696 /* 04_Level01Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94D829E6B8AC003BE696 /* 04_Level01Intro.swift */; };
 		0E1E94DB29E6B8C0003BE696 /* 04_Level01Intro.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94DA29E6B8C0003BE696 /* 04_Level01Intro.sks */; };
 		0E1E94E129E6B91C003BE696 /* 06_WinLevel01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94E029E6B91C003BE696 /* 06_WinLevel01.swift */; };
@@ -44,6 +44,7 @@
 		0E5D6D0A29E6E7B900716C76 /* N01_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D0929E6E7B900716C76 /* N01_button.png */; };
 		0E5D6D0D29E6E98100716C76 /* N01_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D0B29E6E98100716C76 /* N01_cat.png */; };
 		0E5D6D0E29E6E98100716C76 /* N01_mice.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D0C29E6E98100716C76 /* N01_mice.png */; };
+		0E5D6D1129E6EF3800716C76 /* N02_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D1029E6EF3800716C76 /* N02_button.png */; };
 		0E770D9329E5A92A00C11C22 /* 09_Level02Gameplay_OnGrass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E770D9229E5A92A00C11C22 /* 09_Level02Gameplay_OnGrass.swift */; };
 		0E770D9529E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9429E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks */; };
 		0E770D9729E5BB4100C11C22 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9629E5BB4100C11C22 /* leaf.png */; };
@@ -70,8 +71,8 @@
 		0E1E94CE29E6B7EC003BE696 /* N01_Intro.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N01_Intro.sks; sourceTree = "<group>"; };
 		0E1E94D029E6B83E003BE696 /* N02_OriginalStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N02_OriginalStory.swift; sourceTree = "<group>"; };
 		0E1E94D229E6B852003BE696 /* N02_OriginalStory.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N02_OriginalStory.sks; sourceTree = "<group>"; };
-		0E1E94D429E6B866003BE696 /* 03_HowToPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 03_HowToPlay.swift; sourceTree = "<group>"; };
-		0E1E94D629E6B87D003BE696 /* 03_HowToPlay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 03_HowToPlay.sks; sourceTree = "<group>"; };
+		0E1E94D429E6B866003BE696 /* N03_HowToPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N03_HowToPlay.swift; sourceTree = "<group>"; };
+		0E1E94D629E6B87D003BE696 /* N03_HowToPlay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N03_HowToPlay.sks; sourceTree = "<group>"; };
 		0E1E94D829E6B8AC003BE696 /* 04_Level01Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 04_Level01Intro.swift; sourceTree = "<group>"; };
 		0E1E94DA29E6B8C0003BE696 /* 04_Level01Intro.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 04_Level01Intro.sks; sourceTree = "<group>"; };
 		0E1E94E029E6B91C003BE696 /* 06_WinLevel01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 06_WinLevel01.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		0E5D6D0929E6E7B900716C76 /* N01_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_button.png; sourceTree = "<group>"; };
 		0E5D6D0B29E6E98100716C76 /* N01_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_cat.png; sourceTree = "<group>"; };
 		0E5D6D0C29E6E98100716C76 /* N01_mice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_mice.png; sourceTree = "<group>"; };
+		0E5D6D1029E6EF3800716C76 /* N02_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N02_button.png; sourceTree = "<group>"; };
 		0E770D9229E5A92A00C11C22 /* 09_Level02Gameplay_OnGrass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 09_Level02Gameplay_OnGrass.swift; sourceTree = "<group>"; };
 		0E770D9429E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 09_Level02Gameplay_OnGrass.sks; sourceTree = "<group>"; };
 		0E770D9629E5BB4100C11C22 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf.png; sourceTree = "<group>"; };
@@ -163,8 +165,8 @@
 				0E1E94CE29E6B7EC003BE696 /* N01_Intro.sks */,
 				0E1E94D029E6B83E003BE696 /* N02_OriginalStory.swift */,
 				0E1E94D229E6B852003BE696 /* N02_OriginalStory.sks */,
-				0E1E94D429E6B866003BE696 /* 03_HowToPlay.swift */,
-				0E1E94D629E6B87D003BE696 /* 03_HowToPlay.sks */,
+				0E1E94D429E6B866003BE696 /* N03_HowToPlay.swift */,
+				0E1E94D629E6B87D003BE696 /* N03_HowToPlay.sks */,
 				0E1E94D829E6B8AC003BE696 /* 04_Level01Intro.swift */,
 				0E1E94DA29E6B8C0003BE696 /* 04_Level01Intro.sks */,
 				0E19B71729E0813A00F92298 /* N05_Level01Gameplay_Village.swift */,
@@ -200,6 +202,7 @@
 		0E5D6D0F29E6EC0600716C76 /* N02_OriginalStory */ = {
 			isa = PBXGroup;
 			children = (
+				0E5D6D1029E6EF3800716C76 /* N02_button.png */,
 				0E5D6CFF29E6CC6B00716C76 /* N02_background.png */,
 			);
 			path = N02_OriginalStory;
@@ -267,6 +270,7 @@
 				0E5D6D0829E6E77C00716C76 /* Sound.mp3 in Resources */,
 				0E5D6D0029E6CC6B00716C76 /* N02_background.png in Resources */,
 				0E19B70829E0802700F92298 /* Main.storyboard in Resources */,
+				0E5D6D1129E6EF3800716C76 /* N02_button.png in Resources */,
 				0E1E94F729E6BA0E003BE696 /* 11_Credit.sks in Resources */,
 				0E19B72729E42CFE00F92298 /* mouse_3.png in Resources */,
 				0E770D9529E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks in Resources */,
@@ -290,7 +294,7 @@
 				0E5D6D0A29E6E7B900716C76 /* N01_button.png in Resources */,
 				0E19B70129E0802700F92298 /* Actions.sks in Resources */,
 				0E770D9729E5BB4100C11C22 /* leaf.png in Resources */,
-				0E1E94D729E6B87D003BE696 /* 03_HowToPlay.sks in Resources */,
+				0E1E94D729E6B87D003BE696 /* N03_HowToPlay.sks in Resources */,
 				0E19B71B29E3707900F92298 /* mouse_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,7 +313,7 @@
 				0E19B71829E0813A00F92298 /* N05_Level01Gameplay_Village.swift in Sources */,
 				0E1E94CD29E6B7D1003BE696 /* N01_Intro.swift in Sources */,
 				0E1E94E929E6B97D003BE696 /* 08_Level02Intro.swift in Sources */,
-				0E1E94D529E6B866003BE696 /* 03_HowToPlay.swift in Sources */,
+				0E1E94D529E6B866003BE696 /* N03_HowToPlay.swift in Sources */,
 				0E19B70529E0802700F92298 /* GameViewController.swift in Sources */,
 				0E1E94D129E6B83E003BE696 /* N02_OriginalStory.swift in Sources */,
 				0E19B6FD29E0802700F92298 /* AppDelegate.swift in Sources */,

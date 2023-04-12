@@ -9,4 +9,34 @@ import Foundation
 import SpriteKit
 
 public class N02_OriginalStory: SKScene, SKPhysicsContactDelegate {
+    var N02_button: SKSpriteNode!
+    
+    override public func didMove(to view: SKView) {     
+        // animation fading in and out
+        let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
+        let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
+        let flash = SKAction.sequence([fadeIn, fadeOut])
+        let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously        
+
+        // Create button node
+        N02_button = childNode(withName: "N02_button") as? SKSpriteNode
+        N02_button.run(repeatFlash)
+
+
+    }
+    
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+            guard let touch = touches.first else {
+                return
+            }
+            
+            let touchLocation = touch.location(in: self)
+            
+            if N02_button.frame.contains(touchLocation) {
+                let nextScene = N03_HowToPlay(fileNamed: "N03_HowToPlay")
+                nextScene?.scaleMode = .aspectFit
+                let transition = SKTransition.fade(withDuration: 1.0)
+                self.view?.presentScene(nextScene!, transition: transition)
+            }
+        }
 }
