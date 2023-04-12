@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-public class inVillageScene: SKScene, SKPhysicsContactDelegate {
+public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     // start scene
     // set speed for Mice and Cat
     let miceSpeed: CGFloat = 100

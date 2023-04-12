@@ -6,3 +6,7 @@
 //
 
 import Foundation
+import SpriteKit
+
+public class N02_OriginalStory: SKScene, SKPhysicsContactDelegate {
+}
