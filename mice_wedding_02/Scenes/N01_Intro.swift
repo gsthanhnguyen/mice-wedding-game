@@ -13,6 +13,7 @@ public class N01_Intro: SKScene, SKPhysicsContactDelegate {
     var buttonScene_01: SKSpriteNode!
     var N01_cat: SKSpriteNode!
     var N01_mice: SKSpriteNode!
+    var N01_background: SKSpriteNode!
     var sound: SKAudioNode!
     
     override public func didMove(to view: SKView) {     
@@ -25,16 +26,26 @@ public class N01_Intro: SKScene, SKPhysicsContactDelegate {
         let moveUpDown: SKAction = SKAction.sequence([SKAction.moveBy(x: 0, y: 20, duration: 0.5), SKAction.moveBy(x: 0, y: -20, duration: 0.5)])
         let moveUpDownContinuously: SKAction = SKAction.repeatForever(moveUpDown)
         
-
+        N01_background = childNode(withName: "N01_background") as? SKSpriteNode
+        N01_background.zPosition = -1
         // Create button node
         buttonScene_01 = childNode(withName: "N01_button") as? SKSpriteNode
+        buttonScene_01.zPosition = 1
+        print("done button")
         buttonScene_01.run(repeatFlash)
+        print("done button flash")
 
         N01_cat = childNode(withName: "N01_cat") as? SKSpriteNode
+        N01_cat.zPosition = 1
+        print("done cat")
         N01_cat.run(moveUpDownContinuously)
+        print("done cat move")
 
         N01_mice = childNode(withName: "N01_mice") as? SKSpriteNode
+        N01_mice.zPosition = 1
+        print("done mice")
         N01_mice.run(moveUpDownContinuously)
+        print("done mice move")
         
         // Sound credit: Music from #Uppbeat (free for Creators!):https://uppbeat.io/t/soundroll/the-incident
         // License code: ZZ1XRJ9UWQ5JTVUD

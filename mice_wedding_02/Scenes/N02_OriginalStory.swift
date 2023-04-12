@@ -10,6 +10,7 @@ import SpriteKit
 
 public class N02_OriginalStory: SKScene, SKPhysicsContactDelegate {
     var N02_button: SKSpriteNode!
+    var N02_background: SKSpriteNode!
     
     override public func didMove(to view: SKView) {     
         // animation fading in and out
@@ -18,8 +19,12 @@ public class N02_OriginalStory: SKScene, SKPhysicsContactDelegate {
         let flash = SKAction.sequence([fadeIn, fadeOut])
         let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously        
 
+        N02_background = childNode(withName: "N02_background") as? SKSpriteNode
+        N02_background.zPosition = -1
+
         // Create button node
         N02_button = childNode(withName: "N02_button") as? SKSpriteNode
+        N02_button.zPosition = 1
         N02_button.run(repeatFlash)
 
 
