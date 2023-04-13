@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-public class N02_OriginalStory: SKScene, SKPhysicsContactDelegate {
+public class N02_OriginalStory: SKScene {
     var N02_button: SKSpriteNode!
     var N02_background: SKSpriteNode!
     

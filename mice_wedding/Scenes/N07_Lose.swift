@@ -1,8 +1,10 @@
 //
-//  06_WinLevel01.swift
+//  07_Lose.swift
 //  mice_wedding_02
 //
 //  Created by Thanh Nguyen on 2023-04-12.
 //
+import SpriteKit
 
-import Foundation
+public class  N07_Lose: SKScene {
+}

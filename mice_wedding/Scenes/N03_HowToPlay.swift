@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-public class N03_HowToPlay: SKScene, SKPhysicsContactDelegate {
+public class N03_HowToPlay: SKScene {
     var N03_button: SKSpriteNode!
     var N03_mouse: SKSpriteNode!
     var N03_background: SKSpriteNode!

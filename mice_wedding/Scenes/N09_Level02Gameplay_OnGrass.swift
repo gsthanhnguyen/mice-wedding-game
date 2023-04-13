@@ -5,7 +5,7 @@
 
 import SpriteKit
 
-public class onGrassScene: SKScene, SKPhysicsContactDelegate {
+public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     // start scene
     // set speed for Mice and Cat
     let miceSpeed: CGFloat = 100

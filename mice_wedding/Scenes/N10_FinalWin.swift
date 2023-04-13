@@ -5,4 +5,7 @@
 //  Created by Thanh Nguyen on 2023-04-12.
 //
 
-import Foundation
+import SpriteKit
+
+public class  N10_FinalWin: SKScene {
+}

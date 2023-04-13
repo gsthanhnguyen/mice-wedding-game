@@ -27,16 +27,16 @@
 		0E1E94D729E6B87D003BE696 /* N03_HowToPlay.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94D629E6B87D003BE696 /* N03_HowToPlay.sks */; };
 		0E1E94D929E6B8AC003BE696 /* N04_Level01Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94D829E6B8AC003BE696 /* N04_Level01Intro.swift */; };
 		0E1E94DB29E6B8C0003BE696 /* N04_Level01Intro.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94DA29E6B8C0003BE696 /* N04_Level01Intro.sks */; };
-		0E1E94E129E6B91C003BE696 /* 06_WinLevel01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94E029E6B91C003BE696 /* 06_WinLevel01.swift */; };
-		0E1E94E329E6B92E003BE696 /* 06_WinLevel01.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94E229E6B92E003BE696 /* 06_WinLevel01.sks */; };
-		0E1E94E529E6B951003BE696 /* 07_Lose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94E429E6B951003BE696 /* 07_Lose.swift */; };
-		0E1E94E729E6B960003BE696 /* 07_Lose.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94E629E6B960003BE696 /* 07_Lose.sks */; };
-		0E1E94E929E6B97D003BE696 /* 08_Level02Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94E829E6B97D003BE696 /* 08_Level02Intro.swift */; };
-		0E1E94EB29E6B99C003BE696 /* 08_Level02Intro.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94EA29E6B99C003BE696 /* 08_Level02Intro.sks */; };
-		0E1E94F129E6B9E2003BE696 /* 10_FinalWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94F029E6B9E2003BE696 /* 10_FinalWin.swift */; };
-		0E1E94F329E6B9EE003BE696 /* 10_FinalWin.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94F229E6B9EE003BE696 /* 10_FinalWin.sks */; };
-		0E1E94F529E6BA00003BE696 /* 11_Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94F429E6BA00003BE696 /* 11_Credit.swift */; };
-		0E1E94F729E6BA0E003BE696 /* 11_Credit.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94F629E6BA0E003BE696 /* 11_Credit.sks */; };
+		0E1E94E129E6B91C003BE696 /* N06_WinLevel01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94E029E6B91C003BE696 /* N06_WinLevel01.swift */; };
+		0E1E94E329E6B92E003BE696 /* N06_WinLevel01.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94E229E6B92E003BE696 /* N06_WinLevel01.sks */; };
+		0E1E94E529E6B951003BE696 /* N07_Lose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94E429E6B951003BE696 /* N07_Lose.swift */; };
+		0E1E94E729E6B960003BE696 /* N07_Lose.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94E629E6B960003BE696 /* N07_Lose.sks */; };
+		0E1E94E929E6B97D003BE696 /* N08_Level02Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94E829E6B97D003BE696 /* N08_Level02Intro.swift */; };
+		0E1E94EB29E6B99C003BE696 /* N08_Level02Intro.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94EA29E6B99C003BE696 /* N08_Level02Intro.sks */; };
+		0E1E94F129E6B9E2003BE696 /* N10_FinalWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94F029E6B9E2003BE696 /* N10_FinalWin.swift */; };
+		0E1E94F329E6B9EE003BE696 /* N10_FinalWin.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94F229E6B9EE003BE696 /* N10_FinalWin.sks */; };
+		0E1E94F529E6BA00003BE696 /* N11_Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94F429E6BA00003BE696 /* N11_Credit.swift */; };
+		0E1E94F729E6BA0E003BE696 /* N11_Credit.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94F629E6BA0E003BE696 /* N11_Credit.sks */; };
 		0E5D6CFE29E6CC6700716C76 /* N01_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6CFD29E6CC6700716C76 /* N01_background.png */; };
 		0E5D6D0029E6CC6B00716C76 /* N02_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6CFF29E6CC6B00716C76 /* N02_background.png */; };
 		0E5D6D0829E6E77C00716C76 /* Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D0729E6E77C00716C76 /* Sound.mp3 */; };
@@ -48,8 +48,8 @@
 		0E5D6D1629E6F25200716C76 /* N03_mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D1529E6F25200716C76 /* N03_mouse.png */; };
 		0E5D6D1829E6F40E00716C76 /* N03_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D1729E6F40E00716C76 /* N03_background.png */; };
 		0E691FB429E797D70046F28F /* mouse_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E691FB329E797D70046F28F /* mouse_4.png */; };
-		0E770D9329E5A92A00C11C22 /* 09_Level02Gameplay_OnGrass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E770D9229E5A92A00C11C22 /* 09_Level02Gameplay_OnGrass.swift */; };
-		0E770D9529E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9429E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks */; };
+		0E770D9329E5A92A00C11C22 /* N09_Level02Gameplay_OnGrass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E770D9229E5A92A00C11C22 /* N09_Level02Gameplay_OnGrass.swift */; };
+		0E770D9529E5A93F00C11C22 /* N09_Level02Gameplay_OnGrass.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9429E5A93F00C11C22 /* N09_Level02Gameplay_OnGrass.sks */; };
 		0E770D9729E5BB4100C11C22 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9629E5BB4100C11C22 /* leaf.png */; };
 		0E770D9929E5C13C00C11C22 /* mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E770D9829E5C13C00C11C22 /* mouse.png */; };
 		0EADE49029E44E4D004B142D /* exitHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EADE48F29E44E4D004B142D /* exitHole.png */; };
@@ -77,16 +77,16 @@
 		0E1E94D629E6B87D003BE696 /* N03_HowToPlay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N03_HowToPlay.sks; sourceTree = "<group>"; };
 		0E1E94D829E6B8AC003BE696 /* N04_Level01Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N04_Level01Intro.swift; sourceTree = "<group>"; };
 		0E1E94DA29E6B8C0003BE696 /* N04_Level01Intro.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N04_Level01Intro.sks; sourceTree = "<group>"; };
-		0E1E94E029E6B91C003BE696 /* 06_WinLevel01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 06_WinLevel01.swift; sourceTree = "<group>"; };
-		0E1E94E229E6B92E003BE696 /* 06_WinLevel01.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 06_WinLevel01.sks; sourceTree = "<group>"; };
-		0E1E94E429E6B951003BE696 /* 07_Lose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 07_Lose.swift; sourceTree = "<group>"; };
-		0E1E94E629E6B960003BE696 /* 07_Lose.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 07_Lose.sks; sourceTree = "<group>"; };
-		0E1E94E829E6B97D003BE696 /* 08_Level02Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 08_Level02Intro.swift; sourceTree = "<group>"; };
-		0E1E94EA29E6B99C003BE696 /* 08_Level02Intro.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 08_Level02Intro.sks; sourceTree = "<group>"; };
-		0E1E94F029E6B9E2003BE696 /* 10_FinalWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10_FinalWin.swift; sourceTree = "<group>"; };
-		0E1E94F229E6B9EE003BE696 /* 10_FinalWin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 10_FinalWin.sks; sourceTree = "<group>"; };
-		0E1E94F429E6BA00003BE696 /* 11_Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 11_Credit.swift; sourceTree = "<group>"; };
-		0E1E94F629E6BA0E003BE696 /* 11_Credit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 11_Credit.sks; sourceTree = "<group>"; };
+		0E1E94E029E6B91C003BE696 /* N06_WinLevel01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N06_WinLevel01.swift; sourceTree = "<group>"; };
+		0E1E94E229E6B92E003BE696 /* N06_WinLevel01.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N06_WinLevel01.sks; sourceTree = "<group>"; };
+		0E1E94E429E6B951003BE696 /* N07_Lose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N07_Lose.swift; sourceTree = "<group>"; };
+		0E1E94E629E6B960003BE696 /* N07_Lose.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N07_Lose.sks; sourceTree = "<group>"; };
+		0E1E94E829E6B97D003BE696 /* N08_Level02Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N08_Level02Intro.swift; sourceTree = "<group>"; };
+		0E1E94EA29E6B99C003BE696 /* N08_Level02Intro.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N08_Level02Intro.sks; sourceTree = "<group>"; };
+		0E1E94F029E6B9E2003BE696 /* N10_FinalWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N10_FinalWin.swift; sourceTree = "<group>"; };
+		0E1E94F229E6B9EE003BE696 /* N10_FinalWin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N10_FinalWin.sks; sourceTree = "<group>"; };
+		0E1E94F429E6BA00003BE696 /* N11_Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N11_Credit.swift; sourceTree = "<group>"; };
+		0E1E94F629E6BA0E003BE696 /* N11_Credit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N11_Credit.sks; sourceTree = "<group>"; };
 		0E5D6CFD29E6CC6700716C76 /* N01_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_background.png; sourceTree = "<group>"; };
 		0E5D6CFF29E6CC6B00716C76 /* N02_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N02_background.png; sourceTree = "<group>"; };
 		0E5D6D0729E6E77C00716C76 /* Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound.mp3; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		0E5D6D1529E6F25200716C76 /* N03_mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N03_mouse.png; sourceTree = "<group>"; };
 		0E5D6D1729E6F40E00716C76 /* N03_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N03_background.png; sourceTree = "<group>"; };
 		0E691FB329E797D70046F28F /* mouse_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse_4.png; sourceTree = "<group>"; };
-		0E770D9229E5A92A00C11C22 /* 09_Level02Gameplay_OnGrass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 09_Level02Gameplay_OnGrass.swift; sourceTree = "<group>"; };
-		0E770D9429E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 09_Level02Gameplay_OnGrass.sks; sourceTree = "<group>"; };
+		0E770D9229E5A92A00C11C22 /* N09_Level02Gameplay_OnGrass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N09_Level02Gameplay_OnGrass.swift; sourceTree = "<group>"; };
+		0E770D9429E5A93F00C11C22 /* N09_Level02Gameplay_OnGrass.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N09_Level02Gameplay_OnGrass.sks; sourceTree = "<group>"; };
 		0E770D9629E5BB4100C11C22 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf.png; sourceTree = "<group>"; };
 		0E770D9829E5C13C00C11C22 /* mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse.png; sourceTree = "<group>"; };
 		0EADE48F29E44E4D004B142D /* exitHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitHole.png; sourceTree = "<group>"; };
@@ -148,18 +148,18 @@
 		0E19B71929E3701600F92298 /* MediaAssets */ = {
 			isa = PBXGroup;
 			children = (
-				0E5D6D1229E6F1F300716C76 /* N03_HowToPlay */,
+				0E1ECB5729E7D3DA001D1681 /* N11_Credit */,
+				0E1ECB5629E7D3C3001D1681 /* N10_FinalWin */,
+				0E1ECB5529E7D3B1001D1681 /* N09_Level02Gameplay_OnGrass */,
+				0E1ECB5429E7D3A9001D1681 /* N08_Level02Intro */,
+				0E1ECB5329E7D39C001D1681 /* N07_Lose */,
+				0E1ECB5229E7D38C001D1681 /* N06_WinLevel01 */,
+				0E1ECB5129E7D338001D1681 /* N04_Level01Intro */,
+				0E1ECB5029E7CF97001D1681 /* N05_Level01Gameplay_Village */,
 				0E5D6D0629E6E65600716C76 /* N01_Intro */,
 				0E5D6D0F29E6EC0600716C76 /* N02_OriginalStory */,
-				0E770D9829E5C13C00C11C22 /* mouse.png */,
-				0E19B71A29E3707900F92298 /* mouse_1.png */,
-				0E19B72429E42CF200F92298 /* mouse_2.png */,
-				0E19B72629E42CFE00F92298 /* mouse_3.png */,
-				0E691FB329E797D70046F28F /* mouse_4.png */,
-				0E19B71C29E371C700F92298 /* cat.png */,
-				0EADE48F29E44E4D004B142D /* exitHole.png */,
+				0E5D6D1229E6F1F300716C76 /* N03_HowToPlay */,
 				0E770D9629E5BB4100C11C22 /* leaf.png */,
-				0E19B71E29E4050700F92298 /* wall.sks */,
 			);
 			path = MediaAssets;
 			sourceTree = "<group>";
@@ -178,20 +178,84 @@
 				0E1E94DA29E6B8C0003BE696 /* N04_Level01Intro.sks */,
 				0E19B71729E0813A00F92298 /* N05_Level01Gameplay_Village.swift */,
 				0E19B71529E0809700F92298 /* N05_Level01Gameplay_Village.sks */,
-				0E1E94E029E6B91C003BE696 /* 06_WinLevel01.swift */,
-				0E1E94E229E6B92E003BE696 /* 06_WinLevel01.sks */,
-				0E1E94E429E6B951003BE696 /* 07_Lose.swift */,
-				0E1E94E629E6B960003BE696 /* 07_Lose.sks */,
-				0E1E94E829E6B97D003BE696 /* 08_Level02Intro.swift */,
-				0E1E94EA29E6B99C003BE696 /* 08_Level02Intro.sks */,
-				0E770D9229E5A92A00C11C22 /* 09_Level02Gameplay_OnGrass.swift */,
-				0E770D9429E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks */,
-				0E1E94F029E6B9E2003BE696 /* 10_FinalWin.swift */,
-				0E1E94F229E6B9EE003BE696 /* 10_FinalWin.sks */,
-				0E1E94F429E6BA00003BE696 /* 11_Credit.swift */,
-				0E1E94F629E6BA0E003BE696 /* 11_Credit.sks */,
+				0E1E94E029E6B91C003BE696 /* N06_WinLevel01.swift */,
+				0E1E94E229E6B92E003BE696 /* N06_WinLevel01.sks */,
+				0E1E94E429E6B951003BE696 /* N07_Lose.swift */,
+				0E1E94E629E6B960003BE696 /* N07_Lose.sks */,
+				0E1E94E829E6B97D003BE696 /* N08_Level02Intro.swift */,
+				0E1E94EA29E6B99C003BE696 /* N08_Level02Intro.sks */,
+				0E770D9229E5A92A00C11C22 /* N09_Level02Gameplay_OnGrass.swift */,
+				0E770D9429E5A93F00C11C22 /* N09_Level02Gameplay_OnGrass.sks */,
+				0E1E94F029E6B9E2003BE696 /* N10_FinalWin.swift */,
+				0E1E94F229E6B9EE003BE696 /* N10_FinalWin.sks */,
+				0E1E94F429E6BA00003BE696 /* N11_Credit.swift */,
+				0E1E94F629E6BA0E003BE696 /* N11_Credit.sks */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0E1ECB5029E7CF97001D1681 /* N05_Level01Gameplay_Village */ = {
+			isa = PBXGroup;
+			children = (
+				0E19B71E29E4050700F92298 /* wall.sks */,
+				0E770D9829E5C13C00C11C22 /* mouse.png */,
+				0E19B71A29E3707900F92298 /* mouse_1.png */,
+				0E19B72429E42CF200F92298 /* mouse_2.png */,
+				0E19B72629E42CFE00F92298 /* mouse_3.png */,
+				0E691FB329E797D70046F28F /* mouse_4.png */,
+				0E19B71C29E371C700F92298 /* cat.png */,
+				0EADE48F29E44E4D004B142D /* exitHole.png */,
+			);
+			path = N05_Level01Gameplay_Village;
+			sourceTree = "<group>";
+		};
+		0E1ECB5129E7D338001D1681 /* N04_Level01Intro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = N04_Level01Intro;
+			sourceTree = "<group>";
+		};
+		0E1ECB5229E7D38C001D1681 /* N06_WinLevel01 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = N06_WinLevel01;
+			sourceTree = "<group>";
+		};
+		0E1ECB5329E7D39C001D1681 /* N07_Lose */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = N07_Lose;
+			sourceTree = "<group>";
+		};
+		0E1ECB5429E7D3A9001D1681 /* N08_Level02Intro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = N08_Level02Intro;
+			sourceTree = "<group>";
+		};
+		0E1ECB5529E7D3B1001D1681 /* N09_Level02Gameplay_OnGrass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = N09_Level02Gameplay_OnGrass;
+			sourceTree = "<group>";
+		};
+		0E1ECB5629E7D3C3001D1681 /* N10_FinalWin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = N10_FinalWin;
+			sourceTree = "<group>";
+		};
+		0E1ECB5729E7D3DA001D1681 /* N11_Credit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = N11_Credit;
 			sourceTree = "<group>";
 		};
 		0E5D6D0629E6E65600716C76 /* N01_Intro */ = {
@@ -288,26 +352,26 @@
 				0E5D6D0029E6CC6B00716C76 /* N02_background.png in Resources */,
 				0E19B70829E0802700F92298 /* Main.storyboard in Resources */,
 				0E5D6D1129E6EF3800716C76 /* N02_button.png in Resources */,
-				0E1E94F729E6BA0E003BE696 /* 11_Credit.sks in Resources */,
+				0E1E94F729E6BA0E003BE696 /* N11_Credit.sks in Resources */,
 				0E19B72729E42CFE00F92298 /* mouse_3.png in Resources */,
-				0E770D9529E5A93F00C11C22 /* 09_Level02Gameplay_OnGrass.sks in Resources */,
+				0E770D9529E5A93F00C11C22 /* N09_Level02Gameplay_OnGrass.sks in Resources */,
 				0E5D6CFE29E6CC6700716C76 /* N01_background.png in Resources */,
-				0E1E94F329E6B9EE003BE696 /* 10_FinalWin.sks in Resources */,
+				0E1E94F329E6B9EE003BE696 /* N10_FinalWin.sks in Resources */,
 				0E5D6D1429E6F23200716C76 /* N03_button.png in Resources */,
 				0E5D6D0E29E6E98100716C76 /* N01_mice.png in Resources */,
 				0E19B71F29E4050700F92298 /* wall.sks in Resources */,
 				0E19B72529E42CF200F92298 /* mouse_2.png in Resources */,
 				0EADE49029E44E4D004B142D /* exitHole.png in Resources */,
-				0E1E94E329E6B92E003BE696 /* 06_WinLevel01.sks in Resources */,
+				0E1E94E329E6B92E003BE696 /* N06_WinLevel01.sks in Resources */,
 				0E5D6D1829E6F40E00716C76 /* N03_background.png in Resources */,
 				0E1E94CF29E6B7EC003BE696 /* N01_Intro.sks in Resources */,
 				0E1E94DB29E6B8C0003BE696 /* N04_Level01Intro.sks in Resources */,
 				0E19B71D29E371C700F92298 /* cat.png in Resources */,
-				0E1E94E729E6B960003BE696 /* 07_Lose.sks in Resources */,
+				0E1E94E729E6B960003BE696 /* N07_Lose.sks in Resources */,
 				0E770D9929E5C13C00C11C22 /* mouse.png in Resources */,
 				0E691FB429E797D70046F28F /* mouse_4.png in Resources */,
 				0E1E94D329E6B852003BE696 /* N02_OriginalStory.sks in Resources */,
-				0E1E94EB29E6B99C003BE696 /* 08_Level02Intro.sks in Resources */,
+				0E1E94EB29E6B99C003BE696 /* N08_Level02Intro.sks in Resources */,
 				0E19B71629E0809700F92298 /* N05_Level01Gameplay_Village.sks in Resources */,
 				0E19B70D29E0802900F92298 /* LaunchScreen.storyboard in Resources */,
 				0E5D6D1629E6F25200716C76 /* N03_mouse.png in Resources */,
@@ -326,19 +390,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E1E94F529E6BA00003BE696 /* 11_Credit.swift in Sources */,
+				0E1E94F529E6BA00003BE696 /* N11_Credit.swift in Sources */,
 				0E1E94D929E6B8AC003BE696 /* N04_Level01Intro.swift in Sources */,
-				0E770D9329E5A92A00C11C22 /* 09_Level02Gameplay_OnGrass.swift in Sources */,
-				0E1E94E529E6B951003BE696 /* 07_Lose.swift in Sources */,
+				0E770D9329E5A92A00C11C22 /* N09_Level02Gameplay_OnGrass.swift in Sources */,
+				0E1E94E529E6B951003BE696 /* N07_Lose.swift in Sources */,
 				0E19B71829E0813A00F92298 /* N05_Level01Gameplay_Village.swift in Sources */,
 				0E1E94CD29E6B7D1003BE696 /* N01_Intro.swift in Sources */,
-				0E1E94E929E6B97D003BE696 /* 08_Level02Intro.swift in Sources */,
+				0E1E94E929E6B97D003BE696 /* N08_Level02Intro.swift in Sources */,
 				0E1E94D529E6B866003BE696 /* N03_HowToPlay.swift in Sources */,
 				0E19B70529E0802700F92298 /* GameViewController.swift in Sources */,
 				0E1E94D129E6B83E003BE696 /* N02_OriginalStory.swift in Sources */,
 				0E19B6FD29E0802700F92298 /* AppDelegate.swift in Sources */,
-				0E1E94F129E6B9E2003BE696 /* 10_FinalWin.swift in Sources */,
-				0E1E94E129E6B91C003BE696 /* 06_WinLevel01.swift in Sources */,
+				0E1E94F129E6B9E2003BE696 /* N10_FinalWin.swift in Sources */,
+				0E1E94E129E6B91C003BE696 /* N06_WinLevel01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
