@@ -18,6 +18,8 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     var leadingMouse: SKSpriteNode?
     var cats: [SKSpriteNode] = [] // using array list to manage multiple cats
     var exitHole: SKSpriteNode?
+    var N05_background: SKSpriteNode!
+    var walls: [SKSpriteNode] = []
 
     var lastTouchLocation: CGPoint? = nil
 
@@ -26,15 +28,18 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     static let cat: UInt32 = 0x1 << 0 // 1
     static let mouse: UInt32 = 0x1 << 1 // 2
     static let exitHole: UInt32 = 0x1 << 2 // 4
+    static let wall: UInt32 = 0x1 << 3 // 8
     }
 
     // set animation for Nodes
     override public func didMove(to view: SKView) {
         // set physics
         physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVector(dx: 0, dy: 0)
 
-        // set up the exit hole
         exitHole = SKSpriteNode(imageNamed: "exitHole")
+        N05_background = SKSpriteNode(imageNamed: "N05_background")
+        N05_background.zPosition = -1
 
         // animation moving up and down
         let moveUpDown: SKAction = SKAction.sequence([SKAction.moveBy(x: 0, y: 10, duration: 0.5), SKAction.moveBy(x: 0, y: -10, duration: 0.5)])
@@ -55,6 +60,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
             if let nodeName = child.name, nodeName.hasPrefix("mouse_") { // declare the name of the node in the scene
                 child.run(moveUpDownContinuously)
                 let mouseNode = child as! SKSpriteNode
+                mouseNode.zPosition = 1
                 mouseNode.physicsBody = SKPhysicsBody(rectangleOf: mouseNode.size)
                 mouseNode.physicsBody?.categoryBitMask = PhysicsCategory.mouse // set the category of the node
                 mouseNode.physicsBody?.collisionBitMask = PhysicsCategory.cat // set the collision of the node
@@ -66,6 +72,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
             } else if child.name == "cat" { // declare the name of the node in the scene
                 child.run(moveLeftRightContinuously)
                 let catNode = child as! SKSpriteNode
+                catNode.zPosition = 1
                 catNode.physicsBody = SKPhysicsBody(rectangleOf: catNode.size)
                 catNode.physicsBody?.categoryBitMask = PhysicsCategory.cat
                 catNode.physicsBody?.collisionBitMask = PhysicsCategory.mouse
@@ -77,11 +84,22 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
             } else if child.name == "exitHole" {
                 child.run(repeatFlash)
                 let exitHoleNode: SKSpriteNode = child as! SKSpriteNode
+                exitHoleNode.zPosition = 1
                 exitHoleNode.physicsBody = SKPhysicsBody(rectangleOf: exitHoleNode.size)
                 exitHoleNode.physicsBody?.categoryBitMask = PhysicsCategory.exitHole // set the category of the node
                 exitHoleNode.physicsBody?.collisionBitMask = PhysicsCategory.mouse // set the collision of the node
                 exitHoleNode.physicsBody?.contactTestBitMask = PhysicsCategory.mouse // set the contact of the node
                 exitHoleNode.physicsBody?.affectedByGravity = false // set the gravity of the node
+            } else if child.name == "wall" {
+                let wallNode: SKSpriteNode = child as! SKSpriteNode
+                wallNode.zPosition = 1
+                wallNode.physicsBody = SKPhysicsBody(rectangleOf: wallNode.size)
+                wallNode.physicsBody?.categoryBitMask = PhysicsCategory.wall
+                wallNode.physicsBody?.collisionBitMask = PhysicsCategory.mouse
+                wallNode.physicsBody?.contactTestBitMask = PhysicsCategory.mouse
+                wallNode.physicsBody?.affectedByGravity = false
+                wallNode.physicsBody?.isDynamic = false
+                walls.append(wallNode)
             }
             
         }
@@ -117,7 +135,6 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         let xDistance = abs(currentPosition.x - lastTouchLocation.x)
         let yDistance = abs(currentPosition.y - lastTouchLocation.y)
         if xDistance > leadingMouse.frame.width/2 || yDistance > leadingMouse.frame.height/2 {
-            print("updateMice: update mouse movement")
             mouseMovementUpdating(for: leadingMouse, to: lastTouchLocation, speed: miceSpeed)
         } else {
             leadingMouse.physicsBody?.isResting = true
@@ -158,7 +175,6 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         }
         let targetPosition: CGPoint = leadingMouse.position
         for cat: SKSpriteNode in cats { // this part to make all cats move to the mouse
-            print("updateCatChasing: cat movement updating")
             catMovementUpdating(for: cat, to: targetPosition, speed: catSpeed)
         }
     }
@@ -190,14 +206,21 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         }
 
         if firstBody.categoryBitMask == PhysicsCategory.cat && secondBody.categoryBitMask == PhysicsCategory.mouse {
-            upLevel(true)
+            print("cat and mouse contact")
+            upLevel(false)
         } else if firstBody.categoryBitMask == PhysicsCategory.mouse && secondBody.categoryBitMask == PhysicsCategory.exitHole {
+            print("mouse and exitHole contact")
             upLevel(true)
+        } else if firstBody.categoryBitMask == PhysicsCategory.mouse && secondBody.categoryBitMask == PhysicsCategory.wall {
+            print("mouse and wall contact")
         }
     }
 
     // handle the end of the game
     fileprivate func upLevel(_ win: Bool) {
+//        let transition: SKTransition = SKTransition.fade(withDuration: 1.0)
+//        let resultScene = LevelDecision(didWin: didWin, jumpToLevel: 2)
+//        view?.presentScene(LevelDecision, transition: transition)
         let transition = SKTransition.fade(withDuration: 1.0)
         let blankScene = SKScene(size: view!.bounds.size)
         view?.presentScene(blankScene, transition: transition)
