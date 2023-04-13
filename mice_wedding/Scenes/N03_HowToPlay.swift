@@ -25,7 +25,6 @@ public class N03_HowToPlay: SKScene, SKPhysicsContactDelegate {
         let flash = SKAction.sequence([fadeIn, fadeOut])
         let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously        
         // animation moving left and right
-        // Create the actions
         let moveDistance = CGFloat(500)
         let moveRight = SKAction.moveBy(x: moveDistance, y: 0, duration: TimeInterval(3))
         let flipRight = SKAction.scaleX(to: 1.5, duration: 0)
