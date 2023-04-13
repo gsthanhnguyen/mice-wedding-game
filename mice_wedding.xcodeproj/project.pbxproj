@@ -56,7 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E19B6F929E0802700F92298 /* mice_wedding_02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mice_wedding_02.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E19B6F929E0802700F92298 /* mice_wedding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mice_wedding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E19B6FC29E0802700F92298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E19B70029E0802700F92298 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		0E19B70429E0802700F92298 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +87,6 @@
 		0E1E94F229E6B9EE003BE696 /* 10_FinalWin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 10_FinalWin.sks; sourceTree = "<group>"; };
 		0E1E94F429E6BA00003BE696 /* 11_Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 11_Credit.swift; sourceTree = "<group>"; };
 		0E1E94F629E6BA0E003BE696 /* 11_Credit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 11_Credit.sks; sourceTree = "<group>"; };
-		0E1ECB4F29E7B2BA001D1681 /* MyPlayground_addedProject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_addedProject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0E5D6CFD29E6CC6700716C76 /* N01_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_background.png; sourceTree = "<group>"; };
 		0E5D6CFF29E6CC6B00716C76 /* N02_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N02_background.png; sourceTree = "<group>"; };
 		0E5D6D0729E6E77C00716C76 /* Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound.mp3; sourceTree = "<group>"; };
@@ -120,8 +119,7 @@
 		0E19B6F029E0802700F92298 = {
 			isa = PBXGroup;
 			children = (
-				0E1ECB4F29E7B2BA001D1681 /* MyPlayground_addedProject.playground */,
-				0E19B6FB29E0802700F92298 /* mice_wedding_02 */,
+				0E19B6FB29E0802700F92298 /* mice_wedding */,
 				0E19B6FA29E0802700F92298 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,12 +127,12 @@
 		0E19B6FA29E0802700F92298 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E19B6F929E0802700F92298 /* mice_wedding_02.app */,
+				0E19B6F929E0802700F92298 /* mice_wedding.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0E19B6FB29E0802700F92298 /* mice_wedding_02 */ = {
+		0E19B6FB29E0802700F92298 /* mice_wedding */ = {
 			isa = PBXGroup;
 			children = (
 				0E1E94CB29E6B7B2003BE696 /* Scenes */,
@@ -144,7 +142,7 @@
 				0E19B70629E0802700F92298 /* Main.storyboard */,
 				0E19B70B29E0802900F92298 /* LaunchScreen.storyboard */,
 			);
-			path = mice_wedding_02;
+			path = mice_wedding;
 			sourceTree = "<group>";
 		};
 		0E19B71929E3701600F92298 /* MediaAssets */ = {
@@ -230,9 +228,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0E19B6F829E0802700F92298 /* mice_wedding_02 */ = {
+		0E19B6F829E0802700F92298 /* mice_wedding */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E19B71029E0802900F92298 /* Build configuration list for PBXNativeTarget "mice_wedding_02" */;
+			buildConfigurationList = 0E19B71029E0802900F92298 /* Build configuration list for PBXNativeTarget "mice_wedding" */;
 			buildPhases = (
 				0E19B6F529E0802700F92298 /* Sources */,
 				0E19B6F629E0802700F92298 /* Frameworks */,
@@ -242,9 +240,9 @@
 			);
 			dependencies = (
 			);
-			name = mice_wedding_02;
+			name = mice_wedding;
 			productName = mice_wedding_02;
-			productReference = 0E19B6F929E0802700F92298 /* mice_wedding_02.app */;
+			productReference = 0E19B6F929E0802700F92298 /* mice_wedding.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -262,7 +260,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0E19B6F429E0802700F92298 /* Build configuration list for PBXProject "mice_wedding_02" */;
+			buildConfigurationList = 0E19B6F429E0802700F92298 /* Build configuration list for PBXProject "mice_wedding" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -275,7 +273,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0E19B6F829E0802700F92298 /* mice_wedding_02 */,
+				0E19B6F829E0802700F92298 /* mice_wedding */,
 			);
 		};
 /* End PBXProject section */
@@ -541,7 +539,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E19B6F429E0802700F92298 /* Build configuration list for PBXProject "mice_wedding_02" */ = {
+		0E19B6F429E0802700F92298 /* Build configuration list for PBXProject "mice_wedding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E19B70E29E0802900F92298 /* Debug */,
@@ -550,7 +548,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E19B71029E0802900F92298 /* Build configuration list for PBXNativeTarget "mice_wedding_02" */ = {
+		0E19B71029E0802900F92298 /* Build configuration list for PBXNativeTarget "mice_wedding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E19B71129E0802900F92298 /* Debug */,
