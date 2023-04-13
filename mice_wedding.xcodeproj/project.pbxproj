@@ -37,6 +37,12 @@
 		0E1E94F329E6B9EE003BE696 /* N10_FinalWin.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94F229E6B9EE003BE696 /* N10_FinalWin.sks */; };
 		0E1E94F529E6BA00003BE696 /* N11_Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E94F429E6BA00003BE696 /* N11_Credit.swift */; };
 		0E1E94F729E6BA0E003BE696 /* N11_Credit.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E94F629E6BA0E003BE696 /* N11_Credit.sks */; };
+		0E1ECB5B29E7D5F2001D1681 /* N04_house.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECB5829E7D5F2001D1681 /* N04_house.png */; };
+		0E1ECB5C29E7D5F2001D1681 /* N04_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECB5929E7D5F2001D1681 /* N04_background.png */; };
+		0E1ECB5D29E7D5F2001D1681 /* N04_tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECB5A29E7D5F2001D1681 /* N04_tree.png */; };
+		0E1ECB5F29E7D5FC001D1681 /* N04_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECB5E29E7D5FC001D1681 /* N04_button.png */; };
+		0E1ECB6229E7D821001D1681 /* N04_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECB6029E7D821001D1681 /* N04_cat.png */; };
+		0E1ECB6329E7D821001D1681 /* N04_mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECB6129E7D821001D1681 /* N04_mouse.png */; };
 		0E5D6CFE29E6CC6700716C76 /* N01_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6CFD29E6CC6700716C76 /* N01_background.png */; };
 		0E5D6D0029E6CC6B00716C76 /* N02_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6CFF29E6CC6B00716C76 /* N02_background.png */; };
 		0E5D6D0829E6E77C00716C76 /* Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D0729E6E77C00716C76 /* Sound.mp3 */; };
@@ -87,6 +93,12 @@
 		0E1E94F229E6B9EE003BE696 /* N10_FinalWin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N10_FinalWin.sks; sourceTree = "<group>"; };
 		0E1E94F429E6BA00003BE696 /* N11_Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N11_Credit.swift; sourceTree = "<group>"; };
 		0E1E94F629E6BA0E003BE696 /* N11_Credit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = N11_Credit.sks; sourceTree = "<group>"; };
+		0E1ECB5829E7D5F2001D1681 /* N04_house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N04_house.png; sourceTree = "<group>"; };
+		0E1ECB5929E7D5F2001D1681 /* N04_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N04_background.png; sourceTree = "<group>"; };
+		0E1ECB5A29E7D5F2001D1681 /* N04_tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N04_tree.png; sourceTree = "<group>"; };
+		0E1ECB5E29E7D5FC001D1681 /* N04_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N04_button.png; sourceTree = "<group>"; };
+		0E1ECB6029E7D821001D1681 /* N04_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N04_cat.png; sourceTree = "<group>"; };
+		0E1ECB6129E7D821001D1681 /* N04_mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N04_mouse.png; sourceTree = "<group>"; };
 		0E5D6CFD29E6CC6700716C76 /* N01_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_background.png; sourceTree = "<group>"; };
 		0E5D6CFF29E6CC6B00716C76 /* N02_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N02_background.png; sourceTree = "<group>"; };
 		0E5D6D0729E6E77C00716C76 /* Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound.mp3; sourceTree = "<group>"; };
@@ -212,6 +224,12 @@
 		0E1ECB5129E7D338001D1681 /* N04_Level01Intro */ = {
 			isa = PBXGroup;
 			children = (
+				0E1ECB6029E7D821001D1681 /* N04_cat.png */,
+				0E1ECB6129E7D821001D1681 /* N04_mouse.png */,
+				0E1ECB5E29E7D5FC001D1681 /* N04_button.png */,
+				0E1ECB5929E7D5F2001D1681 /* N04_background.png */,
+				0E1ECB5829E7D5F2001D1681 /* N04_house.png */,
+				0E1ECB5A29E7D5F2001D1681 /* N04_tree.png */,
 			);
 			path = N04_Level01Intro;
 			sourceTree = "<group>";
@@ -347,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1ECB6229E7D821001D1681 /* N04_cat.png in Resources */,
 				0E5D6D0D29E6E98100716C76 /* N01_cat.png in Resources */,
 				0E5D6D0829E6E77C00716C76 /* Sound.mp3 in Resources */,
 				0E5D6D0029E6CC6B00716C76 /* N02_background.png in Resources */,
@@ -359,12 +378,15 @@
 				0E1E94F329E6B9EE003BE696 /* N10_FinalWin.sks in Resources */,
 				0E5D6D1429E6F23200716C76 /* N03_button.png in Resources */,
 				0E5D6D0E29E6E98100716C76 /* N01_mice.png in Resources */,
+				0E1ECB5D29E7D5F2001D1681 /* N04_tree.png in Resources */,
 				0E19B71F29E4050700F92298 /* wall.sks in Resources */,
 				0E19B72529E42CF200F92298 /* mouse_2.png in Resources */,
+				0E1ECB5F29E7D5FC001D1681 /* N04_button.png in Resources */,
 				0EADE49029E44E4D004B142D /* exitHole.png in Resources */,
 				0E1E94E329E6B92E003BE696 /* N06_WinLevel01.sks in Resources */,
 				0E5D6D1829E6F40E00716C76 /* N03_background.png in Resources */,
 				0E1E94CF29E6B7EC003BE696 /* N01_Intro.sks in Resources */,
+				0E1ECB5C29E7D5F2001D1681 /* N04_background.png in Resources */,
 				0E1E94DB29E6B8C0003BE696 /* N04_Level01Intro.sks in Resources */,
 				0E19B71D29E371C700F92298 /* cat.png in Resources */,
 				0E1E94E729E6B960003BE696 /* N07_Lose.sks in Resources */,
@@ -372,10 +394,12 @@
 				0E691FB429E797D70046F28F /* mouse_4.png in Resources */,
 				0E1E94D329E6B852003BE696 /* N02_OriginalStory.sks in Resources */,
 				0E1E94EB29E6B99C003BE696 /* N08_Level02Intro.sks in Resources */,
+				0E1ECB6329E7D821001D1681 /* N04_mouse.png in Resources */,
 				0E19B71629E0809700F92298 /* N05_Level01Gameplay_Village.sks in Resources */,
 				0E19B70D29E0802900F92298 /* LaunchScreen.storyboard in Resources */,
 				0E5D6D1629E6F25200716C76 /* N03_mouse.png in Resources */,
 				0E5D6D0A29E6E7B900716C76 /* N01_button.png in Resources */,
+				0E1ECB5B29E7D5F2001D1681 /* N04_house.png in Resources */,
 				0E19B70129E0802700F92298 /* Actions.sks in Resources */,
 				0E770D9729E5BB4100C11C22 /* leaf.png in Resources */,
 				0E1E94D729E6B87D003BE696 /* N03_HowToPlay.sks in Resources */,
