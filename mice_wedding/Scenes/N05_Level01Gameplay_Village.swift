@@ -217,12 +217,9 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     }
 
     // handle the end of the game
-    fileprivate func upLevel(_ win: Bool) {
-//        let transition: SKTransition = SKTransition.fade(withDuration: 1.0)
-//        let resultScene = LevelDecision(didWin: didWin, jumpToLevel: 2)
-//        view?.presentScene(LevelDecision, transition: transition)
-        let transition = SKTransition.fade(withDuration: 1.0)
-        let blankScene = SKScene(size: view!.bounds.size)
-        view?.presentScene(blankScene, transition: transition)
+    fileprivate func upLevel(_ didWin: Bool) {
+        let transition: SKTransition = SKTransition.fade(withDuration: 1.0)
+        let resultScene = LevelDecision(didWin: didWin, jumpToLevel: 1, size: size)
+        view?.presentScene(resultScene, transition: transition)
     }
 }

@@ -8,82 +8,54 @@
 import SpriteKit
 
 public class LevelDecision: SKScene {
-    // var didWin: Bool
-    // var jumpToLevel: Int
+    var didWin: Bool
+    var currentLevel: Int
+    let transition = SKTransition.fade(withDuration: 1.0)
 
-    // init(didWin: Bool, jumpToLevel: Int) {
-    // self.didWin = didWin
-    // self.jumpToLevel = jumpToLevel
-    // scaleMode = .aspectFill
-    // }
+    init(didWin: Bool, jumpToLevel: Int, size: CGSize) {
+        self.didWin = didWin
+        self.currentLevel = jumpToLevel
+        super.init(size: size)
+        scaleMode = .aspectFill
+    }
 
-    // override public func didMove(to view: SKView) {
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override public func didMove(to view: SKView) {
     
-    // self.removeAllActions()
-    
-    // if !didWin {
-    //     let nextScene = N07_Lose(fileNamed: "N07_Lose")
-    //     let transition = SKTransition.flipVertical(withDuration: 1.0)
-    //     nextScene.scaleMode = .aspectFill
-    //     view.presentScene(nextScene, transition: transition)
-    // } else if didWin {
-    //     let nextScene = N07_Lose(fileNamed: "N07_Lose")
-    //     let transition = SKTransition.flipVertical(withDuration: 1.0)
-    //     nextScene.scaleMode = .aspectFill
-    //     view.presentScene(nextScene, transition: transition)
-    // }
+        self.removeAllActions()
         
-    //     //Level 2
-    //     if levelToSend == 2 {
-    //         guard let nextScene = GameScene2(fileNamed: "GameScene2") else { fatalError("GameScene not found") }
-    //         let transition = SKTransition.flipVertical(withDuration: 1.0)
-    //         nextScene.scaleMode = .aspectFit
-    //         view?.presentScene(nextScene, transition: transition)
-    //     }
-        
-    //     //Level 2
-    //     if levelToSend == 3 {
-    //         guard let nextScene = GameScene3(fileNamed: "GameScene3") else { fatalError("GameScene not found") }
-    //         let transition = SKTransition.flipVertical(withDuration: 1.0)
-    //         nextScene.scaleMode = .aspectFit
-    //         view?.presentScene(nextScene, transition: transition)
-    //     }
-        
-    // }
-    
-    // if didWin {
-        
-    //     if levelToSend == 2 {
+        if !didWin {
+            if currentLevel == 1 {
+                if let nextScene = Lose_Level01(fileNamed: "Lose_Level01"){
+                    nextScene.scaleMode = .aspectFit
+                    view.presentScene(nextScene, transition: transition)
+                }
+            }
             
-    //         guard let nextScene = Instruction4(fileNamed: "Instruction4") else { fatalError("GameScene not found") }
-    //         let transition = SKTransition.flipVertical(withDuration: 1.0)
-    //         nextScene.scaleMode = .aspectFit
-    //         view?.presentScene(nextScene, transition: transition)
+            if currentLevel == 2 {
+                if let nextScene = Lose_Level02(fileNamed: "Lose_Level02") {
+                    nextScene.scaleMode = .aspectFit
+                    view.presentScene(nextScene, transition: transition)
+                }
+            }
+        } else if didWin {
             
-    //     }
-        
-    //     if levelToSend == 3 {
+            if currentLevel == 1 {
+                if let nextScene = N06_WinLevel01(fileNamed: "N06_WinLevel01") {
+                    nextScene.scaleMode = .aspectFit
+                    view.presentScene(nextScene, transition: transition)
+                }
+            }
             
-    //         guard let nextScene = GameScene3(fileNamed: "GameScene3") else { fatalError("GameScene not found") }
-    //         let transition = SKTransition.flipVertical(withDuration: 1.0)
-    //         nextScene.scaleMode = .aspectFit
-    //         view?.presentScene(nextScene, transition: transition)
-            
-    //     }
-        
-    //     if levelToSend == 4 {
-            
-    //         // send to final page
-            
-    //         //and from the final page send to main menu
-            
-    //         guard let nextScene = MainMenu(fileNamed: "MainMenu") else { fatalError("GameScene not found") }
-    //         let transition = SKTransition.flipVertical(withDuration: 1.0)
-    //         nextScene.scaleMode = .aspectFit
-    //         view?.presentScene(nextScene, transition: transition)
-            
-    //     }
-        
-    // }
-    
+            if currentLevel == 2 {
+                if let nextScene = N10_FinalWin(fileNamed: "N10_FinalWin") {
+                    nextScene.scaleMode = .aspectFit
+                    view.presentScene(nextScene, transition: transition)
+                }
+            }
+        }
+    }
 }

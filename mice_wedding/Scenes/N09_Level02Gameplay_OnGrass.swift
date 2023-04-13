@@ -245,9 +245,9 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     }
 
     // handle the end of the game
-    fileprivate func upLevel(_ win: Bool) {
-        let transition = SKTransition.fade(withDuration: 1.0)
-        let blankScene = SKScene(size: view!.bounds.size)
-        view?.presentScene(blankScene, transition: transition)
+    fileprivate func upLevel(_ didWin: Bool) {
+        let transition: SKTransition = SKTransition.fade(withDuration: 1.0)
+        let resultScene = LevelDecision(didWin: didWin, jumpToLevel: 2, size: size)
+        view?.presentScene(resultScene, transition: transition)
     }
 }
