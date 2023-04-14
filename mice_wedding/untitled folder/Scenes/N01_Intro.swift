@@ -14,9 +14,8 @@ public class N01_Intro: SKScene {
     var N01_cat: SKSpriteNode!
     var N01_mice: SKSpriteNode!
     var N01_background: SKSpriteNode!
-    var sound: SKAudioNode!
     
-    override public func didMove(to view: SKView) {     
+    override public func didMove(to view: SKView) {
         // animation fading in and out
         let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
         let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
@@ -40,10 +39,6 @@ public class N01_Intro: SKScene {
         N01_mice = childNode(withName: "N01_mice") as? SKSpriteNode
         N01_mice.zPosition = 1
         N01_mice.run(moveUpDownContinuously)
-        
-        // Sound credit: Music from #Uppbeat (free for Creators!):https://uppbeat.io/t/soundroll/the-incident
-        // License code: ZZ1XRJ9UWQ5JTVUD
-        self.run(SKAction.playSoundFileNamed("Sound.mp3", waitForCompletion: false))
 
     }
     

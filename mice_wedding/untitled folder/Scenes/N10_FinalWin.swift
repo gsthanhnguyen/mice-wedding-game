@@ -11,7 +11,11 @@ public class  N10_FinalWin: SKScene {
     var N10_button: SKSpriteNode!
     var N10_background: SKSpriteNode!
     
-    override public func didMove(to view: SKView) {     
+    override public func didMove(to view: SKView) {
+        // update background sound
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                appDelegate.backgroundMusicManager.updateSound_Win()
+            }
         // animation fading in and out
         let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
         let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)

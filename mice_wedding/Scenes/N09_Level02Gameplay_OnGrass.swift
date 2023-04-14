@@ -8,8 +8,8 @@ import SpriteKit
 public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     // start scene
     // set speed for Mice and Cat
-    let mouseSpeed: CGFloat = 200.0
-    let catSpeed: CGFloat = 20.0
+    let mouseSpeed: CGFloat = 250.0
+    let catSpeed: CGFloat = 140.0
     let leafDuration: CGFloat = 6.0
 
     // declare objects
