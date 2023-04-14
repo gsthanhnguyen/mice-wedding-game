@@ -67,6 +67,7 @@
 		0E1ECB9E29E835F7001D1681 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECB9D29E835F6001D1681 /* wall.png */; };
 		0E1ECBA029E8C154001D1681 /* N05_Level01Gameplay_Village.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ECB9F29E8C154001D1681 /* N05_Level01Gameplay_Village.swift */; };
 		0E1ECBA229E8C735001D1681 /* wall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBA129E8C735001D1681 /* wall.sks */; };
+		0E1ECBA429E8DA48001D1681 /* N09_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBA329E8DA47001D1681 /* N09_background.png */; };
 		0E5D6CFE29E6CC6700716C76 /* N01_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6CFD29E6CC6700716C76 /* N01_background.png */; };
 		0E5D6D0029E6CC6B00716C76 /* N02_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6CFF29E6CC6B00716C76 /* N02_background.png */; };
 		0E5D6D0829E6E77C00716C76 /* Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D0729E6E77C00716C76 /* Sound.mp3 */; };
@@ -147,6 +148,7 @@
 		0E1ECB9D29E835F6001D1681 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.png; path = "../../../../../../../../Desktop/mice-wedding-assets/wall.png"; sourceTree = "<group>"; };
 		0E1ECB9F29E8C154001D1681 /* N05_Level01Gameplay_Village.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N05_Level01Gameplay_Village.swift; sourceTree = "<group>"; };
 		0E1ECBA129E8C735001D1681 /* wall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = wall.sks; sourceTree = "<group>"; };
+		0E1ECBA329E8DA47001D1681 /* N09_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N09_background.png; sourceTree = "<group>"; };
 		0E5D6CFD29E6CC6700716C76 /* N01_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_background.png; sourceTree = "<group>"; };
 		0E5D6CFF29E6CC6B00716C76 /* N02_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N02_background.png; sourceTree = "<group>"; };
 		0E5D6D0729E6E77C00716C76 /* Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound.mp3; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		0E1ECB5529E7D3B1001D1681 /* N09_Level02Gameplay_OnGrass */ = {
 			isa = PBXGroup;
 			children = (
+				0E1ECBA329E8DA47001D1681 /* N09_background.png */,
 			);
 			path = N09_Level02Gameplay_OnGrass;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				0E5D6D1429E6F23200716C76 /* N03_button.png in Resources */,
 				0E1ECB8B29E81546001D1681 /* N08_cat.png in Resources */,
 				0E1ECB9A29E81C94001D1681 /* N11_mouse04.png in Resources */,
+				0E1ECBA429E8DA48001D1681 /* N09_background.png in Resources */,
 				0E5D6D0E29E6E98100716C76 /* N01_mice.png in Resources */,
 				0E1ECB6929E7F127001D1681 /* N05_Level01Gameplay_Village.sks in Resources */,
 				0E1ECB5D29E7D5F2001D1681 /* N04_tree.png in Resources */,

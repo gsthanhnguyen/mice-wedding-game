@@ -20,8 +20,22 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         N05_background = childNode(withName: "N05_background") as? SKSpriteNode
         N05_background?.zPosition = -1
+
+        // animation moving up and down
+        let moveUpDown: SKAction = SKAction.sequence([SKAction.moveBy(x: 0, y: 10, duration: 0.5), SKAction.moveBy(x: 0, y: -10, duration: 0.5)])
+        let moveUpDownContinuously: SKAction = SKAction.repeatForever(moveUpDown)
+        // animation moving left and right
+        let moveLeftRight: SKAction = SKAction.sequence([SKAction.moveBy(x: 20, y: 0, duration: 0.5), SKAction.moveBy(x: -20, y: 0, duration: 0.5)])
+        let moveLeftRightContinuously: SKAction = SKAction.repeatForever(moveLeftRight)
+        // animation fading in and out
+        let flashDuration = 4.0 // The duration of each flash
+        let fadeIn = SKAction.fadeAlpha(to: 1.0, duration: flashDuration / 2)
+        let fadeOut = SKAction.fadeAlpha(to: 0.0, duration: flashDuration / 2)
+        let flash = SKAction.sequence([fadeIn, fadeOut])
+        let repeatFlash = SKAction.repeatForever(flash)
         
         exitHole = childNode(withName: "exitHole") as? SKSpriteNode
+        exitHole?.run(repeatFlash)
         exitHole?.zPosition = 1
         exitHole?.physicsBody = SKPhysicsBody(rectangleOf: exitHole!.size)
         exitHole?.physicsBody?.categoryBitMask = 2 // 2: exitHole
@@ -29,18 +43,14 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         exitHole?.physicsBody?.contactTestBitMask = 1 // 1: mouse
         exitHole?.physicsBody?.affectedByGravity = false
         exitHole?.physicsBody?.allowsRotation = false
-        exitHole!.run(SKAction.repeatForever(
-            SKAction.sequence([
-                SKAction.moveBy(x: 0, y: 10, duration: 0.45),
-                SKAction.moveBy(x: 0, y: -10, duration: 0.45)
-                ]
-        )))
+        
         print("done setting up exit hole")
         
         for child in self.children {
             if child.name == "cat" {
                 if let child = child as? SKSpriteNode {
                     print("set cat")
+                    child.run(moveUpDownContinuously)
                     child.zPosition = 1
                     child.physicsBody = SKPhysicsBody(rectangleOf: child.size)
                     child.physicsBody?.categoryBitMask = 4 // 4: cat
@@ -54,6 +64,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
             //    child.run(moveUpDownContinuously)
                 print("set mouse")
                 if let child = child as? SKSpriteNode {
+                    child.run(moveLeftRightContinuously)
                     child.zPosition = 1
                     child.physicsBody = SKPhysicsBody(rectangleOf: child.size)
                     child.physicsBody?.categoryBitMask = 1 // 1: mouse
