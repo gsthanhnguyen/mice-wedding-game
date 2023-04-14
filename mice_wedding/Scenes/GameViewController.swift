@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = N01_Intro(fileNamed: "N01_Intro") {
+            if let scene = N05_Level01Gameplay_Village(fileNamed: "N05_Level01Gameplay_Village") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
@@ -39,3 +39,48 @@ class GameViewController: UIViewController {
         return true
     }
 }
+
+
+// code to initiate Swiftmp
+
+//import SwiftUI
+//import SpriteKit
+//
+//struct SpriteView: UIViewRepresentable {
+//    typealias UIViewType = SKView
+//    
+//    let scene: SKScene
+//    
+//    func makeUIView(context: Context) -> SKView {
+//        let view = SKView()
+//        view.presentScene(scene)
+//        return view
+//    }
+//    
+//    func updateUIView(_ uiView: SKView, context: Context) {
+//        uiView.presentScene(scene)
+//    }
+//    
+//#if DEBUG
+//    func sizeThatFits(_ size: CGSize) -> CGSize {
+//        let deviceAspectRatio = CGFloat(2732.0 / 2048.0)
+//        let screenRatio = size.width / size.height
+//        let scaleFactor = screenRatio < deviceAspectRatio ? size.width / 2732.0 : size.height / 2048.0
+//        return CGSize(width: scaleFactor * 2732.0, height: scaleFactor * 2048.0)
+//    }
+//    
+//    func previewDevice(_ device: PreviewDevice) -> some View {
+//        SpriteView(scene: N01_Intro(fileNamed: "N01_Intro")!)
+//            .frame(width: 2732.0, height: 2048.0)
+//    }
+//#endif
+//}
+//
+//@main
+//struct MyApp: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            SpriteView(scene: N01_Intro(fileNamed: "N01_Intro")!)
+//        }
+//    }
+//}
