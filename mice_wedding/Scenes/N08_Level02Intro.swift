@@ -16,7 +16,11 @@ public class  N08_Level02Intro: SKScene {
     var N08_background: SKSpriteNode!
 
     
-    override public func didMove(to view: SKView) {     
+    override public func didMove(to view: SKView) {
+        // change background sound
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                appDelegate.backgroundMusicManager.updateSound_Level02()
+            }
         // animation fading in and out
         let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
         let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
