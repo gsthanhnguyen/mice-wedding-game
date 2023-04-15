@@ -17,7 +17,7 @@ public class  N08_Level02Intro: SKScene {
 
     
     override public func didMove(to view: SKView) {
-        // change background sound
+        // stop current sound and play new sound for this Scene
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                 appDelegate.backgroundMusicManager.updateSound_Level02()
             }
@@ -50,8 +50,9 @@ public class  N08_Level02Intro: SKScene {
         N08_button.zPosition = 4
         N08_button.run(repeatFlash)
 
+        // Create nodes for grass and tree
         for child: SKNode in self.children {
-            if child.name == "N08_grass" { // declare the name of the node in the scene
+            if child.name == "N08_grass" {
                 child.run(moveLeftRightContinuously)
                 child.zPosition = 1
             } else if child.name == "N08_tree" {
@@ -61,6 +62,7 @@ public class  N08_Level02Intro: SKScene {
         }
     }
     
+    // handle touch event when user click on the button
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
             guard let touch = touches.first else {
                 return

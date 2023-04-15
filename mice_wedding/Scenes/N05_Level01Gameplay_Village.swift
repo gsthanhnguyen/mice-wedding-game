@@ -3,7 +3,7 @@ import SpriteKit
 public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     
     let mouseSpeed: CGFloat = 250.0
-    let catSpeed: CGFloat = 140.0
+    let catSpeed: CGFloat = 55.0
     
     var exitHole: SKSpriteNode?
     var mouse: SKSpriteNode?
@@ -14,8 +14,14 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     var N05_background: SKSpriteNode?
     
     var lastTouch: CGPoint? = nil
-    // var miceCount: Int = 0
     
+    /*
+    Level 1 Gameplay: Village
+    - Mouse can move around the village
+    - Cat will chase the mouse
+    - If the mouse touches the exit hole, the mouse will be teleported to the next level
+    - If the mouse touches the cat, the mouse will be teleported back to the beginning of the level
+    */
     override public func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         N05_background = childNode(withName: "N05_background") as? SKSpriteNode
@@ -34,6 +40,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         let flash = SKAction.sequence([fadeIn, fadeOut])
         let repeatFlash = SKAction.repeatForever(flash)
         
+        // setup exit hole
         exitHole = childNode(withName: "exitHole") as? SKSpriteNode
         exitHole?.run(repeatFlash)
         exitHole?.zPosition = 1
@@ -43,10 +50,12 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         exitHole?.physicsBody?.contactTestBitMask = 1 // 1: mouse
         exitHole?.physicsBody?.affectedByGravity = false
         exitHole?.physicsBody?.allowsRotation = false
-                
+        
+        // setup mouse and cat
         for child in self.children {
             if child.name == "cat" {
                 if let child = child as? SKSpriteNode {
+                    child.run(moveLeftRightContinuously)
                     child.run(moveUpDownContinuously)
                     child.zPosition = 1
                     child.physicsBody = SKPhysicsBody(rectangleOf: child.size)
@@ -57,10 +66,9 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
                     child.physicsBody?.allowsRotation = false
                     cats.append(child)
                 }
-            } else if let nodeName = child.name, nodeName.hasPrefix("mouse_") { // declare the name of the node in the scene
-            //    child.run(moveUpDownContinuously)
+            } else if let nodeName = child.name, nodeName.hasPrefix("mouse_") {
                 if let child = child as? SKSpriteNode {
-                    child.run(moveLeftRightContinuously)
+                    child.run(moveUpDownContinuously)
                     child.zPosition = 1
                     child.physicsBody = SKPhysicsBody(rectangleOf: child.size)
                     child.physicsBody?.categoryBitMask = 1 // 1: mouse
@@ -72,9 +80,10 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
-        mouse = mice.first
+        mouse = mice.first // set the first mouse as the leading mouse
     }
     
+    // handle touch events
     override public func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?) { handleTouches(touches) }
     
     override public func touchesMoved(_ touches: Set<UITouch>,with event: UIEvent?) { handleTouches(touches) }
@@ -90,52 +99,32 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    fileprivate func shouldMove(currentPosition: CGPoint,
-                                touchPosition: CGPoint) -> Bool {
+    // handle touch events
+    fileprivate func shouldMove(currentPosition: CGPoint, touchPosition: CGPoint) -> Bool {
         guard let mouse = mouse else { return false }
         return abs(currentPosition.x - touchPosition.x) > mouse.frame.width / 2 ||
             abs(currentPosition.y - touchPosition.y) > mouse.frame.height / 2
     }
     
+    // update the position of the mouse
     fileprivate func updateMice() {
         guard let mouse = mouse,
             let touch = lastTouch
             else { return }
         let currentPosition = mouse.position
-        if shouldMove(currentPosition: currentPosition,
-                      touchPosition: touch) {
+        if shouldMove(currentPosition: currentPosition, touchPosition: touch) {
             updateMicePosition(for: mouse, to: touch, speed: mouseSpeed)
         } else {
             mouse.physicsBody?.isResting = true
         }
     }
-    
-    func updateCats() {
-        guard let mouse = mouse else { return }
-        let targetPosition = mouse.position
-        
-        for cat in cats {
-            updatePosition(for: cat, to: targetPosition, speed: catSpeed)
-        }
-    }
-    
-    fileprivate func updatePosition(for sprite: SKSpriteNode, to target: CGPoint, speed: CGFloat) {
-        let currentPosition = sprite.position
-        let angle = CGFloat.pi + atan2(currentPosition.y - target.y, currentPosition.x - target.x)
-        // let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi*0.5), duration: 0)
-        // sprite.run(rotateAction)
-        
-        let velocityX = speed * cos(angle)
-        let velocityY = speed * sin(angle)
-        
-        let newVelocity = CGVector(dx: velocityX, dy: velocityY)
-        sprite.physicsBody?.velocity = newVelocity
-    }
 
+    // helper function to update the position of the mouse
     fileprivate func updateMicePosition(for sprite: SKSpriteNode, to target: CGPoint, speed: CGFloat) {
         
         let currentPosition = sprite.position
         let angle = CGFloat.pi + atan2(currentPosition.y - target.y, currentPosition.x - target.x)
+        // this 2 lines of code is to rotate the mouse according to the direction it is moving
         // let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi*0.5), duration: 0)
         // sprite.run(rotateAction)
         
@@ -158,12 +147,40 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+    
+    // update the position of the cat
+    func updateCats() {
+        guard let mouse = mouse else { return }
+        let targetPosition = mouse.position
+        
+        for cat in cats {
+            updateCatsPosition(for: cat, to: targetPosition, speed: catSpeed)
+        }
+    }
+    
+    // helper function to update the position of the cat
+    fileprivate func updateCatsPosition(for sprite: SKSpriteNode, to target: CGPoint, speed: CGFloat) {
+        let currentPosition = sprite.position
+        let angle = CGFloat.pi + atan2(currentPosition.y - target.y, currentPosition.x - target.x)
+        // this 2 lines of code is to rotate the cat according to the direction it is moving
+        // let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi*0.5), duration: 0)
+        // sprite.run(rotateAction)
+        
+        let velocityX = speed * cos(angle)
+        let velocityY = speed * sin(angle)
+        
+        let newVelocity = CGVector(dx: velocityX, dy: velocityY)
+        sprite.physicsBody?.velocity = newVelocity
+    }
 
+    
+    // handle collision events
     public func didBegin(_ contact: SKPhysicsContact) {
 
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
 
+        // Determine which body is first
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
@@ -172,7 +189,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
 
-        // Check contact
+        // Check contact between mouse and cat
         if firstBody.categoryBitMask == mouse?.physicsBody?.categoryBitMask &&
             secondBody.categoryBitMask == cats[0].physicsBody?.categoryBitMask {
             print("mouse contact with cat")
@@ -184,6 +201,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    // helper function to go to the next level
     fileprivate func upLevel(_ didWin: Bool) {
         let transition: SKTransition = SKTransition.fade(withDuration: 1.0)
         let resultScene = LevelDecision(didWin: didWin, jumpToLevel: 1, size: size)

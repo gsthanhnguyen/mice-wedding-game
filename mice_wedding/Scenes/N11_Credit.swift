@@ -7,6 +7,7 @@
 
 import SpriteKit
 
+
 public class  N11_Credit: SKScene {
 
     var N11_mouse01: SKSpriteNode?
@@ -14,8 +15,7 @@ public class  N11_Credit: SKScene {
     var N11_mouse03: SKSpriteNode?
     var N11_mouse04: SKSpriteNode?
     var mice: [SKSpriteNode]? = []
-var currentNodeIndex: Int = 0
-
+    var currentNodeIndex: Int = 0
 
     var N11_background: SKSpriteNode?
     
@@ -31,10 +31,12 @@ var currentNodeIndex: Int = 0
         let moveUpDown: SKAction = SKAction.sequence([SKAction.moveBy(x: 0, y: 10, duration: 0.5), SKAction.moveBy(x: 0, y: -10, duration: 0.5)])
         let moveUpDownContinuously: SKAction = SKAction.repeatForever(moveUpDown)
 
+        // run the animation for each mouse
         for child: SKNode in self.children {
             if let nodeName = child.name, nodeName.hasPrefix("N11_mouse") { // declare the name of the node in the scene
                 child.run(moveUpDownContinuously)
-                child.zPosition = 1            }
+                child.zPosition = 1            
+            }
         }
     }
 }

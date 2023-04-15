@@ -5,6 +5,12 @@
 //  Created by Thanh Nguyen on 2023-04-13.
 //
 
+
+/*
+this class is used to manage the background music in the game
+Ethan's note: but this class didn't work in Swfitpm, only works in Xcode
+*/
+*/
 import AVFoundation
 
 class BackgroundMusicManager {
@@ -12,6 +18,7 @@ class BackgroundMusicManager {
 
     private var backgroundMusicPlayer: AVAudioPlayer?
 
+    // initialize the background music when the game starts
     private init() {
         // Load and start playing the initial background music
         // SOUND CREDIT FROM UUBEAT: Teddy Bear Waltz - Kevin MacLeod
@@ -30,6 +37,7 @@ class BackgroundMusicManager {
         }
     }
 
+    // update the background music when the game changes the level
     func updateSound_Level01() {
         // Stop the current background music
         backgroundMusicPlayer?.stop()
@@ -51,6 +59,7 @@ class BackgroundMusicManager {
         }
     }
     
+    // update the background music when the game changes the level
     func updateSound_Level02() {
         // Stop the current background music
         backgroundMusicPlayer?.stop()
@@ -72,6 +81,7 @@ class BackgroundMusicManager {
         }
     }
     
+    // update the background music when the game changes the level
     func updateSound_Win() {
         // Stop the current background music
         backgroundMusicPlayer?.stop()

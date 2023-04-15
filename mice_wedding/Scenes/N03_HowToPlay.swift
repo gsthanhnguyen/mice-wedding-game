@@ -51,6 +51,7 @@ public class N03_HowToPlay: SKScene {
         N03_mouse.run(moveBackAndForth)
     }
     
+    // handle touch event when user click on the button
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
             guard let touch = touches.first else {
                 return

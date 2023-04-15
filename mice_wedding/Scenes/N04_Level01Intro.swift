@@ -18,9 +18,10 @@ public class  N04_Level01Intro: SKScene {
     var backgroundMusic: SKAudioNode!
     
     override public func didMove(to view: SKView) {
-                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                        appDelegate.backgroundMusicManager.updateSound_Level01()
-                    }
+        // stop current sound and play new sound for this Scene
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.backgroundMusicManager.updateSound_Level01()
+        }        
         
         // animation fading in and out
         let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
@@ -42,6 +43,7 @@ public class  N04_Level01Intro: SKScene {
         N04_background = childNode(withName: "N04_background") as? SKSpriteNode
         N04_background.zPosition = -1
 
+        // Create animation for nodes on Scene
         N04_house = childNode(withName: "N04_house") as? SKSpriteNode
         N04_house.zPosition = 2
 
@@ -63,6 +65,7 @@ public class  N04_Level01Intro: SKScene {
         N04_button.run(repeatFlash)
     }
     
+    // handle touch event when user click on the button
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
             guard let touch = touches.first else {
                 return

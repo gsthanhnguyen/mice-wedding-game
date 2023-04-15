@@ -26,17 +26,14 @@ public class N02_OriginalStory: SKScene {
         N02_button = childNode(withName: "N02_button") as? SKSpriteNode
         N02_button.zPosition = 1
         N02_button.run(repeatFlash)
-
-
     }
     
+    // handle touch event when user click on the button
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
             guard let touch = touches.first else {
                 return
             }
-            
             let touchLocation = touch.location(in: self)
-            
             if N02_button.frame.contains(touchLocation) {
                 let nextScene = N03_HowToPlay(fileNamed: "N03_HowToPlay")
                 nextScene?.scaleMode = .aspectFit

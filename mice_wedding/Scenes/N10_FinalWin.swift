@@ -12,7 +12,7 @@ public class  N10_FinalWin: SKScene {
     var N10_background: SKSpriteNode!
     
     override public func didMove(to view: SKView) {
-        // update background sound
+        // play new sound for this scene
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                 appDelegate.backgroundMusicManager.updateSound_Win()
             }
@@ -29,8 +29,6 @@ public class  N10_FinalWin: SKScene {
         N10_button = childNode(withName: "N10_button") as? SKSpriteNode
         N10_button.zPosition = 1
         N10_button.run(repeatFlash)
-
-
     }
     
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

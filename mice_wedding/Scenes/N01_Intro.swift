@@ -16,6 +16,7 @@ public class N01_Intro: SKScene {
     var N01_background: SKSpriteNode!
     
     override public func didMove(to view: SKView) {
+        print("Initiate game scene successfully")
         // animation fading in and out
         let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
         let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
@@ -27,6 +28,7 @@ public class N01_Intro: SKScene {
         
         N01_background = childNode(withName: "N01_background") as? SKSpriteNode
         N01_background.zPosition = -1
+
         // Create button node
         buttonScene_01 = childNode(withName: "N01_button") as? SKSpriteNode
         buttonScene_01.zPosition = 1
@@ -39,9 +41,9 @@ public class N01_Intro: SKScene {
         N01_mice = childNode(withName: "N01_mice") as? SKSpriteNode
         N01_mice.zPosition = 1
         N01_mice.run(moveUpDownContinuously)
-
     }
     
+    // handle touch event when user click on the button
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
             guard let touch = touches.first else {
                 return

@@ -73,6 +73,12 @@
 		0E1ECBAA29E90C15001D1681 /* BackgroundMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1ECBA929E90C15001D1681 /* BackgroundMusicManager.swift */; };
 		0E1ECBAD29E90FE0001D1681 /* N08_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBAC29E90FE0001D1681 /* N08_sound.mp3 */; };
 		0E1ECBAF29E910E9001D1681 /* N10_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBAE29E910E9001D1681 /* N10_sound.mp3 */; };
+		0E1ECBB329E99851001D1681 /* test (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBB229E99851001D1681 /* test (1).png */; };
+		0E1ECBB529E99B2F001D1681 /* Bush-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBB429E99B2F001D1681 /* Bush-4.png */; };
+		0E1ECBB729E99C37001D1681 /* Tree-1-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBB629E99C36001D1681 /* Tree-1-4.png */; };
+		0E1ECBB929E99F16001D1681 /* mouse1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBB829E99F16001D1681 /* mouse1.png */; };
+		0E1ECBBB29E99FA8001D1681 /* m1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBBA29E99FA8001D1681 /* m1.png */; };
+		0E1ECBBD29EA4699001D1681 /* Screenshot 2023-04-14 at 11.20.34.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1ECBBC29EA4698001D1681 /* Screenshot 2023-04-14 at 11.20.34.png */; };
 		0E5D6CFE29E6CC6700716C76 /* N01_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6CFD29E6CC6700716C76 /* N01_background.png */; };
 		0E5D6D0029E6CC6B00716C76 /* N02_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6CFF29E6CC6B00716C76 /* N02_background.png */; };
 		0E5D6D0A29E6E7B900716C76 /* N01_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D6D0929E6E7B900716C76 /* N01_button.png */; };
@@ -158,6 +164,12 @@
 		0E1ECBA929E90C15001D1681 /* BackgroundMusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicManager.swift; sourceTree = "<group>"; };
 		0E1ECBAC29E90FE0001D1681 /* N08_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = N08_sound.mp3; sourceTree = "<group>"; };
 		0E1ECBAE29E910E9001D1681 /* N10_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = N10_sound.mp3; sourceTree = "<group>"; };
+		0E1ECBB229E99851001D1681 /* test (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test (1).png"; sourceTree = "<group>"; };
+		0E1ECBB429E99B2F001D1681 /* Bush-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bush-4.png"; sourceTree = "<group>"; };
+		0E1ECBB629E99C36001D1681 /* Tree-1-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tree-1-4.png"; sourceTree = "<group>"; };
+		0E1ECBB829E99F16001D1681 /* mouse1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse1.png; sourceTree = "<group>"; };
+		0E1ECBBA29E99FA8001D1681 /* m1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m1.png; sourceTree = "<group>"; };
+		0E1ECBBC29EA4698001D1681 /* Screenshot 2023-04-14 at 11.20.34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2023-04-14 at 11.20.34.png"; sourceTree = "<group>"; };
 		0E5D6CFD29E6CC6700716C76 /* N01_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_background.png; sourceTree = "<group>"; };
 		0E5D6CFF29E6CC6B00716C76 /* N02_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N02_background.png; sourceTree = "<group>"; };
 		0E5D6D0929E6E7B900716C76 /* N01_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N01_button.png; sourceTree = "<group>"; };
@@ -334,6 +346,12 @@
 		0E1ECB5529E7D3B1001D1681 /* N09_Level02Gameplay_OnGrass */ = {
 			isa = PBXGroup;
 			children = (
+				0E1ECBBC29EA4698001D1681 /* Screenshot 2023-04-14 at 11.20.34.png */,
+				0E1ECBBA29E99FA8001D1681 /* m1.png */,
+				0E1ECBB829E99F16001D1681 /* mouse1.png */,
+				0E1ECBB629E99C36001D1681 /* Tree-1-4.png */,
+				0E1ECBB429E99B2F001D1681 /* Bush-4.png */,
+				0E1ECBB229E99851001D1681 /* test (1).png */,
 				0E1ECBA329E8DA47001D1681 /* N09_background.png */,
 			);
 			path = N09_Level02Gameplay_OnGrass;
@@ -478,13 +496,16 @@
 				0E1ECB7829E809D2001D1681 /* Lose01_button.png in Resources */,
 				0E1ECB9829E81C94001D1681 /* N11_mouse03.png in Resources */,
 				0E1ECBAD29E90FE0001D1681 /* N08_sound.mp3 in Resources */,
+				0E1ECBB729E99C37001D1681 /* Tree-1-4.png in Resources */,
 				0E19B70829E0802700F92298 /* Main.storyboard in Resources */,
 				0E1ECB8A29E81546001D1681 /* N08_mouse.png in Resources */,
 				0E5D6D1129E6EF3800716C76 /* N02_button.png in Resources */,
 				0E1E94F729E6BA0E003BE696 /* N11_Credit.sks in Resources */,
+				0E1ECBBB29E99FA8001D1681 /* m1.png in Resources */,
 				0E19B72729E42CFE00F92298 /* mouse_3.png in Resources */,
 				0E770D9529E5A93F00C11C22 /* N09_Level02Gameplay_OnGrass.sks in Resources */,
 				0E5D6CFE29E6CC6700716C76 /* N01_background.png in Resources */,
+				0E1ECBBD29EA4699001D1681 /* Screenshot 2023-04-14 at 11.20.34.png in Resources */,
 				0E1E94F329E6B9EE003BE696 /* N10_FinalWin.sks in Resources */,
 				0E5D6D1429E6F23200716C76 /* N03_button.png in Resources */,
 				0E1ECB8B29E81546001D1681 /* N08_cat.png in Resources */,
@@ -502,6 +523,7 @@
 				0E1ECB8229E81284001D1681 /* N06_background.png in Resources */,
 				0E5D6D1829E6F40E00716C76 /* N03_background.png in Resources */,
 				0E1E94CF29E6B7EC003BE696 /* N01_Intro.sks in Resources */,
+				0E1ECBB529E99B2F001D1681 /* Bush-4.png in Resources */,
 				0E1ECB8929E81546001D1681 /* N08_grass.png in Resources */,
 				0E1ECB9129E81AD4001D1681 /* N10_background.png in Resources */,
 				0E1ECBA829E905DE001D1681 /* N04_sound.mp3 in Resources */,
@@ -516,6 +538,7 @@
 				0E691FB429E797D70046F28F /* mouse_4.png in Resources */,
 				0E1E94D329E6B852003BE696 /* N02_OriginalStory.sks in Resources */,
 				0E1ECB7629E809CB001D1681 /* Lose01_background.png in Resources */,
+				0E1ECBB929E99F16001D1681 /* mouse1.png in Resources */,
 				0E1E94EB29E6B99C003BE696 /* N08_Level02Intro.sks in Resources */,
 				0E1ECB7C29E80F60001D1681 /* Lose02_background.png in Resources */,
 				0E1ECB9729E81C94001D1681 /* N11_mouse02.png in Resources */,
@@ -523,6 +546,7 @@
 				0E1ECB6329E7D821001D1681 /* N04_mouse.png in Resources */,
 				0E19B70D29E0802900F92298 /* LaunchScreen.storyboard in Resources */,
 				0E5D6D1629E6F25200716C76 /* N03_mouse.png in Resources */,
+				0E1ECBB329E99851001D1681 /* test (1).png in Resources */,
 				0E1ECBA629E90500001D1681 /* N01_sound.mp3 in Resources */,
 				0E5D6D0A29E6E7B900716C76 /* N01_button.png in Resources */,
 				0E1ECB9C29E81EFD001D1681 /* N11_background.png in Resources */,

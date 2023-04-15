@@ -4,6 +4,7 @@
 //
 //  Created by Thanh Nguyen on 2023-04-12.
 //
+
 import SpriteKit
 
 public class  Lose_Level01: SKScene {
@@ -24,17 +25,14 @@ public class  Lose_Level01: SKScene {
         Lose_button = childNode(withName: "Lose01_button") as? SKSpriteNode
         Lose_button.zPosition = 1
         Lose_button.run(repeatFlash)
-
-
     }
     
+    // handle touch event when user click on the button
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
             guard let touch = touches.first else {
                 return
             }
-            
             let touchLocation = touch.location(in: self)
-            
             if Lose_button.frame.contains(touchLocation) {
                 let nextScene = N05_Level01Gameplay_Village(fileNamed: "N05_Level01Gameplay_Village")
                 nextScene?.scaleMode = .aspectFit
