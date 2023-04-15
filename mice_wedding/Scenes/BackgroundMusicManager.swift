@@ -10,7 +10,6 @@
 this class is used to manage the background music in the game
 Ethan's note: but this class didn't work in Swfitpm, only works in Xcode
 */
-*/
 import AVFoundation
 
 class BackgroundMusicManager {

@@ -2,8 +2,8 @@ import SpriteKit
 
 public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     
-    let mouseSpeed: CGFloat = 250.0
-    let catSpeed: CGFloat = 55.0
+    let mouseSpeed: CGFloat = 270.0
+    let catSpeed: CGFloat = 60.0
     
     var exitHole: SKSpriteNode?
     var mouse: SKSpriteNode?
@@ -12,6 +12,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     var cat: SKSpriteNode?
     var cats: [SKSpriteNode] = []
     var N05_background: SKSpriteNode?
+    var star: SKSpriteNode?
     
     var lastTouch: CGPoint? = nil
     
@@ -50,6 +51,10 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         exitHole?.physicsBody?.contactTestBitMask = 1 // 1: mouse
         exitHole?.physicsBody?.affectedByGravity = false
         exitHole?.physicsBody?.allowsRotation = false
+
+        star = childNode(withName: "star") as? SKSpriteNode
+        star?.run(moveUpDownContinuously)
+        star?.zPosition = 1
         
         // setup mouse and cat
         for child in self.children {
@@ -135,7 +140,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.velocity = newVelocity
 
         //update mice moving after the leading mouse
-        let distanceBetweenMice: CGFloat = 70
+        let distanceBetweenMice: CGFloat = 40
         if mice.count > 1 {
             for i in (1..<mice.count).reversed() {
                 let mouse: SKSpriteNode = mice[i]

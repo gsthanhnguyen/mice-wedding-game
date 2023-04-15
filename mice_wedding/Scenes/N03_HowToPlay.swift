@@ -20,16 +20,19 @@ public class N03_HowToPlay: SKScene {
     
     override public func didMove(to view: SKView) {     
         // animation fading in and out
-        let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
-        let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
-        let flash = SKAction.sequence([fadeIn, fadeOut])
-        let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously        
+//        let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
+//        let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
+//        let flash = SKAction.sequence([fadeIn, fadeOut])
+//        let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously
         // animation moving left and right
-        let moveDistance = CGFloat(500)
-        let moveRight = SKAction.moveBy(x: moveDistance, y: 0, duration: TimeInterval(3))
-        let flipRight = SKAction.scaleX(to: 1.5, duration: 0)
-        let moveLeft = SKAction.moveBy(x: -moveDistance, y: 0, duration: TimeInterval(3))
-        let flipLeft = SKAction.scaleX(to: -1.5, duration: 0)
+        let moveDistance = CGFloat(800)
+        let moveRight = SKAction.moveBy(x: moveDistance, y: 0, duration: TimeInterval(6))
+        let flipRight = SKAction.scaleX(to: 3.6, duration: 0)
+        let moveLeft = SKAction.moveBy(x: -moveDistance, y: 0, duration: TimeInterval(6))
+        let flipLeft = SKAction.scaleX(to: -3.6, duration: 0)
+        // animation moving up and down
+        let moveUpDown: SKAction = SKAction.sequence([SKAction.moveBy(x: 0, y: 7, duration: 0.5), SKAction.moveBy(x: 0, y: -7, duration: 0.5)])
+        let moveUpDownContinuously: SKAction = SKAction.repeatForever(moveUpDown)
 
         let moveSequence = SKAction.sequence([moveRight, flipLeft, moveLeft, flipRight])
 
@@ -43,12 +46,13 @@ public class N03_HowToPlay: SKScene {
         // Create button node
         N03_button = childNode(withName: "N03_button") as? SKSpriteNode
         N03_button.zPosition = 1
-        N03_button.run(repeatFlash)
+//        N03_button.run(repeatFlash)
 
         // create mouse node
         N03_mouse = childNode(withName: "N03_mouse") as? SKSpriteNode
         N03_mouse.zPosition = 1
         N03_mouse.run(moveBackAndForth)
+        N03_mouse.run(moveUpDownContinuously)
     }
     
     // handle touch event when user click on the button

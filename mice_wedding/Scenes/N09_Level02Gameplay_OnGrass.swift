@@ -12,8 +12,8 @@ import SpriteKit
 */
 public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     // set speed for Mice and Cat
-    let mouseSpeed: CGFloat = 250.0
-    let catSpeed: CGFloat = 65.0
+    let mouseSpeed: CGFloat = 270.0
+    let catSpeed: CGFloat = 50.0
     let leafDuration: CGFloat = 6.0
 
     // declare objects
@@ -198,9 +198,9 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     fileprivate func updateCatsPosition(for sprite: SKSpriteNode, to target: CGPoint, speed: CGFloat) {
         let currentPosition = sprite.position
         let angle = CGFloat.pi + atan2(currentPosition.y - target.y, currentPosition.x - target.x)
-        let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi), duration: 0)
-        // let rotateAction = SKAction.rotate(toAngle: angle, duration: 0)
-        sprite.run(rotateAction)
+//        let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi), duration: 0)
+//        // let rotateAction = SKAction.rotate(toAngle: angle, duration: 0)
+//        sprite.run(rotateAction)
         
         let velocityX = speed * cos(angle)
         let velocityY = speed * sin(angle)
@@ -253,17 +253,26 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
         let duration: CGFloat = 0.35
         let count: Int = 20
 
-        for mouse in mice { // animate the mouse with the leaf
-            mouse.run(SKAction.repeat(
-            SKAction.sequence([
-                SKAction.setTexture(SKTexture(imageNamed: "leaf")),
-                SKAction.moveBy(x: 0, y: 0, duration: duration),
-                SKAction.setTexture(SKTexture(imageNamed: "mouse")),
-                SKAction.moveBy(x: 0, y: 0, duration: duration),
-                ]
-            ), count: count
-            ))
-            mouse.run(SKAction.setTexture(SKTexture(imageNamed: "mouse"))) // reset texture after animation
+        let mouseTextures = [
+        SKTexture(imageNamed: "N01_mouse01"),
+        SKTexture(imageNamed: "N01_mouse02"),
+        SKTexture(imageNamed: "N01_mouse03")
+        ]
+
+        for (index, mouse) in mice.enumerated() {
+            if let mouse = mouse as? SKSpriteNode {
+                let textureIndex = index % mouseTextures.count
+                let texture = mouseTextures[textureIndex]
+                let sequence = SKAction.sequence([
+                    SKAction.setTexture(SKTexture(imageNamed: "leaf")),
+                    SKAction.moveBy(x: 0, y: 0, duration: duration),
+                    SKAction.setTexture(texture),
+                    SKAction.moveBy(x: 0, y: 0, duration: duration)
+                ])
+                let repeatSequence = SKAction.repeat(sequence, count: count)
+                mouse.run(repeatSequence)
+                mouse.texture = texture // reset texture after animation
+            }
         }
         
         // remove the leaf after specified duration
