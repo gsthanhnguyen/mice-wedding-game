@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = N09_Level02Gameplay_OnGrass(fileNamed: "N09_Level02Gameplay_OnGrass") { // the first scene to play when start the game
+            if let scene = N01_Intro(fileNamed: "N01_Intro") { // the first scene to play when start the game
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 

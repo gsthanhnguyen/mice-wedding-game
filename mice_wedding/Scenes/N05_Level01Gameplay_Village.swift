@@ -43,7 +43,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         
         // setup exit hole
         exitHole = childNode(withName: "exitHole") as? SKSpriteNode
-        exitHole?.run(repeatFlash)
+//        exitHole?.run(repeatFlash)
         exitHole?.zPosition = 1
         exitHole?.physicsBody = SKPhysicsBody(rectangleOf: exitHole!.size)
         exitHole?.physicsBody?.categoryBitMask = 2 // 2: exitHole

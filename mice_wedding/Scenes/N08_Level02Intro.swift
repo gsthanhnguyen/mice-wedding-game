@@ -11,6 +11,8 @@ public class  N08_Level02Intro: SKScene {
     var N08_button: SKSpriteNode!
     var N08_background: SKSpriteNode!
     var mice: [SKSpriteNode] = []
+    var N04_bigcat: SKSpriteNode!
+    var N04_road: SKSpriteNode!
 
     
     override public func didMove(to view: SKView) {
@@ -29,6 +31,14 @@ public class  N08_Level02Intro: SKScene {
         // animation moving left and right
         let moveLeftRight: SKAction = SKAction.sequence([SKAction.moveBy(x: 20, y: 0, duration: 0.5), SKAction.moveBy(x: -20, y: 0, duration: 0.5)])
         let moveLeftRightContinuously: SKAction = SKAction.repeatForever(moveLeftRight)
+        // animation moving for clouds
+        let cloudDuration: TimeInterval = 10
+        let cloudDistance: CGFloat = 600
+        let moveCloudsLeftToRight = SKAction.moveBy(x: cloudDistance, y: 0, duration: cloudDuration)
+        let moveCloudsRightToLeft = SKAction.moveBy(x: -cloudDistance, y: 0, duration: cloudDuration)
+        let moveCloudsRightLeft = SKAction.sequence([moveCloudsLeftToRight,moveCloudsRightToLeft])
+        let cloudMoving = SKAction.repeatForever(moveCloudsRightLeft)
+
 
         // Create the background node
         N08_background = childNode(withName: "N08_background") as? SKSpriteNode
@@ -39,6 +49,13 @@ public class  N08_Level02Intro: SKScene {
         N08_button.zPosition = 4
         // N08_button.run(repeatFlash)
 
+        N04_bigcat = childNode(withName: "N04_bigcat") as? SKSpriteNode
+        N04_bigcat.zPosition = 5
+        N04_bigcat.run(moveUpDownContinuously)
+
+        N04_road = childNode(withName: "N04_road") as? SKSpriteNode
+        N04_road.zPosition = 6
+
         for child in self.children {
             if child.name == "cloud" {
                 if let child = child as? SKSpriteNode {
@@ -48,14 +65,14 @@ public class  N08_Level02Intro: SKScene {
                     // let resetPosition = SKAction.run {child.position = CGPoint(x: self.frame.width + child.size.width/2, y: self.frame.midY)} // reset position
                     // let sequence = SKAction.sequence([moveLeft, resetPosition])
                     // let repeatForever = SKAction.repeatForever(sequence)
-                    child.run(moveLeftRightContinuously)
+                    child.run(cloudMoving)
                     // clouds.append(child)
                 }
             } else if child.name == "mouse" {
                     if let child: SKSpriteNode = child as? SKSpriteNode {
                         // animation move right to left for clouds
                         child.zPosition = 5
-                        child.run(moveUpDownContinuously)
+                        child.run(moveLeftRightContinuously)
                         mice.append(child)
                     }
             }

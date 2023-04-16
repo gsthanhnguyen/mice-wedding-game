@@ -31,6 +31,8 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     var lastTouch: CGPoint? = nil
     var N09_background: SKSpriteNode?
 
+    var star: SKSpriteNode?
+
     // set animation for Nodes
     override public func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -52,7 +54,7 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
 
         // set up the exit hole
         exitHole = childNode(withName: "exitHole") as? SKSpriteNode
-        exitHole?.run(repeatFlash)
+//        exitHole?.run(repeatFlash)
         exitHole?.zPosition = 1
         exitHole?.physicsBody = SKPhysicsBody(rectangleOf: exitHole!.size)
         exitHole?.physicsBody?.categoryBitMask = 2 // 2: exitHole
@@ -60,6 +62,10 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
         exitHole?.physicsBody?.contactTestBitMask = 1 // 1: mouse
         exitHole?.physicsBody?.affectedByGravity = false
         exitHole?.physicsBody?.allowsRotation = false
+
+        star = childNode(withName: "star") as? SKSpriteNode
+        star?.run(moveUpDownContinuously)
+        star?.zPosition = 1
 
         // set up the animation for nodes and add them to the array list
         for child in self.children {
@@ -99,7 +105,7 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
             } else if child.name == "leaf" {
                 if let child = child as? SKSpriteNode { // declare leaf node in the scene
                     child.run(repeatFlash)
-                    child.zPosition = 1
+                    child.zPosition = 2
                     child.physicsBody = SKPhysicsBody(rectangleOf: child.size)
                     child.physicsBody?.categoryBitMask = 8 // 8: leaf
                     child.physicsBody?.collisionBitMask = 1 // 1: mouse
@@ -254,9 +260,9 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
         let count: Int = 20
 
         let mouseTextures = [
-        SKTexture(imageNamed: "N01_mouse01"),
-        SKTexture(imageNamed: "N01_mouse02"),
-        SKTexture(imageNamed: "N01_mouse03")
+        SKTexture(imageNamed: "N09_mouse01"),
+        SKTexture(imageNamed: "N09_mouse02"),
+        SKTexture(imageNamed: "N09_mouse03")
         ]
 
         for (index, mouse) in mice.enumerated() {
@@ -288,6 +294,8 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     fileprivate func upLevel(_ didWin: Bool) {
         let transition: SKTransition = SKTransition.fade(withDuration: 1.0)
         let resultScene = LevelDecision(didWin: didWin, jumpToLevel: 2, size: size)
+        print("get resultScene")
         view?.presentScene(resultScene, transition: transition)
+        print("change scene")
     }
 }

@@ -12,11 +12,11 @@ public class  Lose_Level01: SKScene {
     var Lose_background: SKSpriteNode!
     
     override public func didMove(to view: SKView) {     
-        // animation fading in and out
-        let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
-        let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
-        let flash = SKAction.sequence([fadeIn, fadeOut])
-        let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously        
+//        // animation fading in and out
+//        let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
+//        let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
+//        let flash = SKAction.sequence([fadeIn, fadeOut])
+//        let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously
 
         Lose_background = childNode(withName: "Lose01_background") as? SKSpriteNode
         Lose_background.zPosition = -1
@@ -24,7 +24,7 @@ public class  Lose_Level01: SKScene {
         // Create button node
         Lose_button = childNode(withName: "Lose01_button") as? SKSpriteNode
         Lose_button.zPosition = 1
-        Lose_button.run(repeatFlash)
+//        Lose_button.run(repeatFlash)
     }
     
     // handle touch event when user click on the button
