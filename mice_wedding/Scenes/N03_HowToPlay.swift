@@ -18,12 +18,8 @@ public class N03_HowToPlay: SKScene {
     var rotateBackwards: SKAction!
 
     
-    override public func didMove(to view: SKView) {     
-        // animation fading in and out
-//        let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
-//        let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
-//        let flash = SKAction.sequence([fadeIn, fadeOut])
-//        let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously
+    override public func didMove(to view: SKView) {   
+        print("How to play scene loaded")  
         // animation moving left and right
         let moveDistance = CGFloat(800)
         let moveRight = SKAction.moveBy(x: moveDistance, y: 0, duration: TimeInterval(6))

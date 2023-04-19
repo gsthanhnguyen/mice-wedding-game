@@ -20,6 +20,7 @@ public class  N11_Credit: SKScene {
     var N11_background: SKSpriteNode?
     
     override public func didMove(to view: SKView) {
+        print("Credit scene loaded")
         N11_mouse01 = childNode(withName: "N11_mouse01") as? SKSpriteNode
         N11_mouse02 = childNode(withName: "N11_mouse02") as? SKSpriteNode
         N11_mouse03 = childNode(withName: "N11_mouse03") as? SKSpriteNode

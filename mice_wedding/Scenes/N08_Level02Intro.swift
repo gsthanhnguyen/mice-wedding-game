@@ -20,11 +20,7 @@ public class  N08_Level02Intro: SKScene {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                 appDelegate.backgroundMusicManager.updateSound_Level02()
             }
-        // // animation fading in and out
-        // let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
-        // let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
-        // let flash = SKAction.sequence([fadeIn, fadeOut])
-        // let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously        
+        print("Level 2 Intro scene loaded")
         // animation moving up and down
         let moveUpDown: SKAction = SKAction.sequence([SKAction.moveBy(x: 0, y: 20, duration: 0.5), SKAction.moveBy(x: 0, y: -20, duration: 0.5)])
         let moveUpDownContinuously: SKAction = SKAction.repeatForever(moveUpDown)
@@ -59,14 +55,8 @@ public class  N08_Level02Intro: SKScene {
         for child in self.children {
             if child.name == "cloud" {
                 if let child = child as? SKSpriteNode {
-                    // animation move right to left for clouds
                     child.zPosition = 1
-                    // let moveLeft = SKAction.moveBy(x: -self.frame.width - child.size.width, y: 0, duration: 5) // move left
-                    // let resetPosition = SKAction.run {child.position = CGPoint(x: self.frame.width + child.size.width/2, y: self.frame.midY)} // reset position
-                    // let sequence = SKAction.sequence([moveLeft, resetPosition])
-                    // let repeatForever = SKAction.repeatForever(sequence)
                     child.run(cloudMoving)
-                    // clouds.append(child)
                 }
             } else if child.name == "mouse" {
                     if let child: SKSpriteNode = child as? SKSpriteNode {

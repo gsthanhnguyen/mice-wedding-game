@@ -12,20 +12,14 @@ public class N02_OriginalStory: SKScene {
     var N02_button: SKSpriteNode!
     var N02_background: SKSpriteNode!
     
-    override public func didMove(to view: SKView) {     
-        // animation fading in and out
-//        let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
-//        let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
-//        let flash = SKAction.sequence([fadeIn, fadeOut])
-//        let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously
-
+    override public func didMove(to view: SKView) {   
+        print("Inspirational original story scene loaded")  
         N02_background = childNode(withName: "N02_background") as? SKSpriteNode
         N02_background.zPosition = -1
 
         // Create button node
         N02_button = childNode(withName: "N02_button") as? SKSpriteNode
         N02_button.zPosition = 1
-//        N02_button.run(repeatFlash)
     }
     
     // handle touch event when user click on the button

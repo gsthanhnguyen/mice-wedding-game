@@ -30,6 +30,7 @@ public class LevelDecision: SKScene {
     }
 
     override public func didMove(to view: SKView) {
+        print("Level Decision functionality loaded")
     
         self.removeAllActions() // remove all actions
         

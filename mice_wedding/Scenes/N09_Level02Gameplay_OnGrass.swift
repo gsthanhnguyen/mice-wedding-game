@@ -13,7 +13,7 @@ import SpriteKit
 public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     // set speed for Mice and Cat
     let mouseSpeed: CGFloat = 270.0
-    let catSpeed: CGFloat = 50.0
+    let catSpeed: CGFloat = 80.0
     let leafDuration: CGFloat = 6.0
 
     // declare objects
@@ -35,6 +35,7 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
 
     // set animation for Nodes
     override public func didMove(to view: SKView) {
+        print("Level 2 scene loaded")
         physicsWorld.contactDelegate = self
         N09_background = childNode(withName: "N09_background") as? SKSpriteNode
         N09_background?.zPosition = -1
@@ -65,20 +66,12 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
 
         star = childNode(withName: "star") as? SKSpriteNode
         star?.run(moveUpDownContinuously)
-        star?.zPosition = 1
+        star?.zPosition = 5
 
         // set up the animation for nodes and add them to the array list
         for child in self.children {
             if child.name == "cat" { // declare cat node in the scene
                 if let child = child as? SKSpriteNode {
-                    // this block of code below to set up animation for cat between 2 images
-//                    let texture1 = SKTexture(imageNamed: "mouse_1")
-//                    let texture2 = SKTexture(imageNamed: "cat")
-//                    let runningFrames = [texture1, texture2]
-//                    let runningAnimation = SKAction.animate(with: runningFrames, timePerFrame: 0.1)
-//                    let catRunningAnimation = SKAction.repeatForever(runningAnimation)
-//                    child.run(catRunningAnimation)
-
                     child.run(moveLeftRightContinuously)
                     child.run(moveUpDownContinuously)
                     child.zPosition = 1
@@ -166,9 +159,6 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
         
         let currentPosition = sprite.position
         let angle = CGFloat.pi + atan2(currentPosition.y - target.y, currentPosition.x - target.x)
-        // this part of code below to make mouse rotate to the direction of the touch
-        // let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi*0.5), duration: 0)
-        // sprite.run(rotateAction)
         
         let velocityX = speed * cos(angle)
         let velocityY = speed * sin(angle)
@@ -177,7 +167,7 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.velocity = newVelocity
 
         //update mice moving after the leading mouse
-        let distanceBetweenMice: CGFloat = 70
+        let distanceBetweenMice: CGFloat = 40
         if mice.count > 1 {
             for i in (1..<mice.count).reversed() {
                 let mouse: SKSpriteNode = mice[i]
@@ -204,9 +194,6 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     fileprivate func updateCatsPosition(for sprite: SKSpriteNode, to target: CGPoint, speed: CGFloat) {
         let currentPosition = sprite.position
         let angle = CGFloat.pi + atan2(currentPosition.y - target.y, currentPosition.x - target.x)
-//        let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi), duration: 0)
-//        // let rotateAction = SKAction.rotate(toAngle: angle, duration: 0)
-//        sprite.run(rotateAction)
         
         let velocityX = speed * cos(angle)
         let velocityY = speed * sin(angle)
@@ -266,19 +253,17 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
         ]
 
         for (index, mouse) in mice.enumerated() {
-            if let mouse = mouse as? SKSpriteNode {
-                let textureIndex = index % mouseTextures.count
-                let texture = mouseTextures[textureIndex]
-                let sequence = SKAction.sequence([
-                    SKAction.setTexture(SKTexture(imageNamed: "leaf")),
-                    SKAction.moveBy(x: 0, y: 0, duration: duration),
-                    SKAction.setTexture(texture),
-                    SKAction.moveBy(x: 0, y: 0, duration: duration)
-                ])
-                let repeatSequence = SKAction.repeat(sequence, count: count)
-                mouse.run(repeatSequence)
-                mouse.texture = texture // reset texture after animation
-            }
+            let textureIndex = index % mouseTextures.count
+            let texture = mouseTextures[textureIndex]
+            let sequence = SKAction.sequence([
+                SKAction.setTexture(SKTexture(imageNamed: "leaf")),
+                SKAction.moveBy(x: 0, y: 0, duration: duration),
+                SKAction.setTexture(texture),
+                SKAction.moveBy(x: 0, y: 0, duration: duration)
+            ])
+            let repeatSequence = SKAction.repeat(sequence, count: count)
+            mouse.run(repeatSequence)
+            mouse.texture = texture // reset texture after animation
         }
         
         // remove the leaf after specified duration
@@ -294,8 +279,6 @@ public class N09_Level02Gameplay_OnGrass: SKScene, SKPhysicsContactDelegate {
     fileprivate func upLevel(_ didWin: Bool) {
         let transition: SKTransition = SKTransition.fade(withDuration: 1.0)
         let resultScene = LevelDecision(didWin: didWin, jumpToLevel: 2, size: size)
-        print("get resultScene")
         view?.presentScene(resultScene, transition: transition)
-        print("change scene")
     }
 }

@@ -14,12 +14,7 @@ public class  N06_WinLevel01: SKScene {
     var N06_confetti: SKSpriteNode!
     
     override public func didMove(to view: SKView) {     
-//        // animation fading in and out
-//        let fadeIn = SKAction.fadeAlpha(to: 0, duration: 0.5)
-//        let fadeOut = SKAction.fadeAlpha(to: 0.5, duration: 1)
-//        let flash = SKAction.sequence([fadeIn, fadeOut])
-//        let repeatFlash = SKAction.repeatForever(flash) // call this action to make the node fade in and out continuously
-
+        print("Level 1 Win scene loaded")
         // animation for confetti
         let moveAction = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY), duration: 2.0)
         let fadeOutAction = SKAction.fadeOut(withDuration: 1.0)

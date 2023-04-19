@@ -3,7 +3,7 @@ import SpriteKit
 public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     
     let mouseSpeed: CGFloat = 270.0
-    let catSpeed: CGFloat = 60.0
+    let catSpeed: CGFloat = 80.0
     
     var exitHole: SKSpriteNode?
     var mouse: SKSpriteNode?
@@ -28,22 +28,16 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         N05_background = childNode(withName: "N05_background") as? SKSpriteNode
         N05_background?.zPosition = -1
 
+        print("Level 1 Gameplay scene loaded")
         // animation moving up and down
         let moveUpDown: SKAction = SKAction.sequence([SKAction.moveBy(x: 0, y: 10, duration: 0.5), SKAction.moveBy(x: 0, y: -10, duration: 0.5)])
         let moveUpDownContinuously: SKAction = SKAction.repeatForever(moveUpDown)
         // animation moving left and right
         let moveLeftRight: SKAction = SKAction.sequence([SKAction.moveBy(x: 20, y: 0, duration: 0.5), SKAction.moveBy(x: -20, y: 0, duration: 0.5)])
         let moveLeftRightContinuously: SKAction = SKAction.repeatForever(moveLeftRight)
-        // animation fading in and out
-        let flashDuration = 4.0 // The duration of each flash
-        let fadeIn = SKAction.fadeAlpha(to: 1.0, duration: flashDuration / 2)
-        let fadeOut = SKAction.fadeAlpha(to: 0.0, duration: flashDuration / 2)
-        let flash = SKAction.sequence([fadeIn, fadeOut])
-        let repeatFlash = SKAction.repeatForever(flash)
         
         // setup exit hole
         exitHole = childNode(withName: "exitHole") as? SKSpriteNode
-//        exitHole?.run(repeatFlash)
         exitHole?.zPosition = 1
         exitHole?.physicsBody = SKPhysicsBody(rectangleOf: exitHole!.size)
         exitHole?.physicsBody?.categoryBitMask = 2 // 2: exitHole
@@ -54,7 +48,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
 
         star = childNode(withName: "star") as? SKSpriteNode
         star?.run(moveUpDownContinuously)
-        star?.zPosition = 1
+        star?.zPosition = 5
         
         // setup mouse and cat
         for child in self.children {
@@ -129,9 +123,6 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         
         let currentPosition = sprite.position
         let angle = CGFloat.pi + atan2(currentPosition.y - target.y, currentPosition.x - target.x)
-        // this 2 lines of code is to rotate the mouse according to the direction it is moving
-        // let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi*0.5), duration: 0)
-        // sprite.run(rotateAction)
         
         let velocityX = speed * cos(angle)
         let velocityY = speed * sin(angle)
@@ -140,7 +131,7 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.velocity = newVelocity
 
         //update mice moving after the leading mouse
-        let distanceBetweenMice: CGFloat = 40
+        let distanceBetweenMice: CGFloat = 60
         if mice.count > 1 {
             for i in (1..<mice.count).reversed() {
                 let mouse: SKSpriteNode = mice[i]
@@ -167,9 +158,6 @@ public class N05_Level01Gameplay_Village: SKScene, SKPhysicsContactDelegate {
     fileprivate func updateCatsPosition(for sprite: SKSpriteNode, to target: CGPoint, speed: CGFloat) {
         let currentPosition = sprite.position
         let angle = CGFloat.pi + atan2(currentPosition.y - target.y, currentPosition.x - target.x)
-        // this 2 lines of code is to rotate the cat according to the direction it is moving
-        // let rotateAction = SKAction.rotate(toAngle: angle + (CGFloat.pi*0.5), duration: 0)
-        // sprite.run(rotateAction)
         
         let velocityX = speed * cos(angle)
         let velocityY = speed * sin(angle)
