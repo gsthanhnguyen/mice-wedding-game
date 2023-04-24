@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Lose01_background.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
